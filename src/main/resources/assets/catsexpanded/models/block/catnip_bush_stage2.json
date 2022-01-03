@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:block/cross",
     "textures": {
-        "cross": "simplecatears:block/catnip_bush_stage3"
+        "cross": "catsexpanded:block/catnip_bush_stage2"
     }
 }

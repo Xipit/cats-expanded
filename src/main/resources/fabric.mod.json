@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "id": "simplecatears",
+  "id": "catsexpanded",
   "version": "${version}",
 
-  "name": "Simple Catears",
-  "description": "Adds simple catears to Minecraft!",
+  "name": "Cats Expanded",
+  "description": "Adds more cat stuff to Minecraft!",
   "authors": [
     "xipit"
   ],
@@ -14,16 +14,16 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/simplecatears/icon.png",
+  "icon": "assets/catsexpanded/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "xipit.simple.catears.SimpleCatears"
+      "xipit.cats.expanded.CatsExpanded"
     ]
   },
   "mixins": [
-    "simplecatears.mixins.json"
+    "catsexpanded.mixins.json"
   ],
 
   "depends": {

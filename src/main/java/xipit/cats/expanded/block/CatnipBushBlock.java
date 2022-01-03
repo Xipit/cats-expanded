@@ -1,4 +1,4 @@
-package xipit.simple.catears.block;
+package xipit.cats.expanded.block;
 
 import java.util.Random;
 import net.minecraft.block.AbstractBlock;
@@ -28,7 +28,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import xipit.simple.catears.item.RegisterModItems;
+import xipit.cats.expanded.item.RegisterModItems;
 
 public class CatnipBushBlock
 extends PlantBlock

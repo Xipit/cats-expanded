@@ -1,5 +1,5 @@
 
-package xipit.simple.catears.item;
+package xipit.cats.expanded.item;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class CatearItem extends ArmorItem{
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext){
-        tooltip.add(new TranslatableText("item.simplecatears.catears.tooltip"));
+        tooltip.add(new TranslatableText("item.catsexpanded.catears.tooltip"));
 
         //tooltip.add(new TranslatableText("item.simplecatears.catears.tooltip").formatted((Formatting.RED)));
     }
