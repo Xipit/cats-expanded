@@ -19,7 +19,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "xipit.cats.expanded.CatsExpanded"
+      "xipit.cats.expanded.CatsExpandedMod"
+    ],
+    "client": [
+      "xipit.cats.expanded.CatsExpandedClient"
     ]
   },
   "mixins": [
