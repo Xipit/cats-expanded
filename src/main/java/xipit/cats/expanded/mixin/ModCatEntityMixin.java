@@ -41,7 +41,6 @@ public abstract class ModCatEntityMixin
     @Shadow
     private net.minecraft.entity.ai.goal.TemptGoal temptGoal;
 
-
     protected ModCatEntityMixin(EntityType<? extends TameableEntity> entityType, World world) {
         super((EntityType<? extends TameableEntity>)entityType, world);
         
@@ -49,7 +48,7 @@ public abstract class ModCatEntityMixin
 
     // Return -> before every return statement, ordinal = 0 -> only at the first return statement
     @Inject(method = "initGoals", at = @At(value= "RETURN", ordinal = 0))
-    protected void InjectInitGoals(CallbackInfo cbi){
+    protected void InjectInitGoals(CallbackInfo ci){
 
         // catnip can now be used to tempt cats
         TemptGoal oldTemptGoal = new TemptGoal(this,0.6, Ingredient.ofItems(Items.COD, Items.SALMON), true);

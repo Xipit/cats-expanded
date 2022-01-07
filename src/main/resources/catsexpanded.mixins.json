@@ -4,7 +4,8 @@
   "package": "xipit.cats.expanded.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "ModCatEntityMixin"
+    "ModCatEntityMixin",
+    "ModCatSPawnerMixin"
   ],
   "client": [
     "ExampleMixin"
