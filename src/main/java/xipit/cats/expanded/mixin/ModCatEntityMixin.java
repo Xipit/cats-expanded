@@ -15,6 +15,7 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.world.World;
 import xipit.cats.expanded.item.ModItems;
+import xipit.cats.expanded.util.ModDruggedBehaviourGoal;
 import xipit.cats.expanded.util.ModEatCatnipGoal;
 
 // helpful link: https://github.com/SpongePowered/Mixin/wiki/Introduction-to-Mixins---Understanding-Mixin-Architecture
@@ -34,14 +35,18 @@ public abstract class ModCatEntityMixin
     @Inject(method = "initGoals", at = @At(value= "RETURN", ordinal = 0))
     protected void InjectInitGoals(CallbackInfo ci){
 
-        // catnip can now be used to tempt cats
+        // catnip can now be used to tempt cats and is a higher priority than fish
         TemptGoal oldTemptGoal = new TemptGoal(this,0.6, Ingredient.ofItems(Items.COD, Items.SALMON), true);
         TemptGoal newTemptGoal = new TemptGoal(this,0.8, Ingredient.ofItems(ModItems.CATNIP), true);
         this.goalSelector.remove(oldTemptGoal);
         this.goalSelector.add(3, newTemptGoal);
         this.goalSelector.add(4, oldTemptGoal);
 
+        // the desire to consume catnip
         this.goalSelector.add(7, new ModEatCatnipGoal(this, (double)1.2f, 12, 1));
+
+        // consuming catnip now makes cats/ocelots go bonkers/zoom
+        this.goalSelector.add(1, new ModDruggedBehaviourGoal(this, 2));
     }
 
 

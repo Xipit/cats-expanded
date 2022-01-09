@@ -20,6 +20,7 @@ public class ModEatCatnipGoal
     protected final Random random = new Random();
     private static final int EATING_TIME = 40;
     protected int timer;
+    private static final int HIGH_DURATION = 300;
 
 
 
@@ -72,16 +73,19 @@ public class ModEatCatnipGoal
 
 
     private void devourCatnip(BlockState state) {
-        //TODO: Add new StatusEffect for a catnip high + maybe new animation
-        mob.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200));
+        // Nausea is important for ModDruggedBehaviourGoal that simulates the effects of catnip
+        mob.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, HIGH_DURATION));
+        mob.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, HIGH_DURATION));
+        mob.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, HIGH_DURATION));
 
+        //TODO: add custom sound
         mob.playSound(SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, 1.0f, 1.0f);
         mob.world.setBlockState(this.targetPos, (BlockState)state.with(ModBlocks.CATNIP_BUSH.AGE, 1), Block.NOTIFY_LISTENERS);
     }
 
     @Override
     public boolean canStart() {
-        return !mob.isSleeping() && super.canStart();
+        return !mob.isSleeping() && super.canStart() && random.nextInt(10) < 7;
     }
 
     @Override
