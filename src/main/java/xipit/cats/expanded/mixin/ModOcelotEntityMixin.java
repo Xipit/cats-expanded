@@ -19,13 +19,13 @@ import xipit.cats.expanded.util.ModEatCatnipGoal;
 
 // helpful link: https://github.com/SpongePowered/Mixin/wiki/Introduction-to-Mixins---Understanding-Mixin-Architecture
 @Mixin(value = CatEntity.class)
-public abstract class ModCatEntityMixin 
+public abstract class ModOcelotEntityMixin 
     extends TameableEntity{
 
     @Shadow
     private net.minecraft.entity.ai.goal.TemptGoal temptGoal;
 
-    protected ModCatEntityMixin(EntityType<? extends TameableEntity> entityType, World world) {
+    protected ModOcelotEntityMixin(EntityType<? extends TameableEntity> entityType, World world) {
         super((EntityType<? extends TameableEntity>)entityType, world);
         
     }

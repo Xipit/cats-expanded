@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "ModCatEntityMixin",
-    "ModCatSPawnerMixin"
+    "ModOcelotEntityMixin",
+    "ModCatSpawnerMixin"
   ],
   "client": [
     "ExampleMixin"
