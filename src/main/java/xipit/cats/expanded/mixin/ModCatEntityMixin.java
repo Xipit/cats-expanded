@@ -6,25 +6,30 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.entity.passive.CatEntity;
 import net.minecraft.entity.passive.TameableEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.world.World;
+import xipit.cats.expanded.CatsExpandedMod;
+import xipit.cats.expanded.goal.ModDruggedBehaviourGoal;
+import xipit.cats.expanded.goal.ModEatCatnipGoal;
 import xipit.cats.expanded.item.ModItems;
-import xipit.cats.expanded.util.ModDruggedBehaviourGoal;
-import xipit.cats.expanded.util.ModEatCatnipGoal;
+import xipit.cats.expanded.util.ModAnimalEntityMixinInterface;
 
-// helpful link: https://github.com/SpongePowered/Mixin/wiki/Introduction-to-Mixins---Understanding-Mixin-Architecture
+// helpful link:    https://github.com/SpongePowered/Mixin/wiki/Introduction-to-Mixins---Understanding-Mixin-Architecture
+// also:            https://fabricmc.net/wiki/tutorial:mixin_accessors
 @Mixin(value = CatEntity.class)
 public abstract class ModCatEntityMixin 
     extends TameableEntity{
-
-    @Shadow
-    private net.minecraft.entity.ai.goal.TemptGoal temptGoal;
 
     protected ModCatEntityMixin(EntityType<? extends TameableEntity> entityType, World world) {
         super((EntityType<? extends TameableEntity>)entityType, world);
@@ -36,19 +41,29 @@ public abstract class ModCatEntityMixin
     protected void InjectInitGoals(CallbackInfo ci){
 
         // catnip can now be used to tempt cats and is a higher priority than fish
-        TemptGoal oldTemptGoal = new TemptGoal(this,0.6, Ingredient.ofItems(Items.COD, Items.SALMON), true);
         TemptGoal newTemptGoal = new TemptGoal(this,0.8, Ingredient.ofItems(ModItems.CATNIP), true);
-        this.goalSelector.remove(oldTemptGoal);
         this.goalSelector.add(3, newTemptGoal);
-        this.goalSelector.add(4, oldTemptGoal);
 
         // the desire to consume catnip
         this.goalSelector.add(7, new ModEatCatnipGoal(this, (double)1.2f, 12, 1));
 
         // consuming catnip now makes cats/ocelots go bonkers/zoom
-        this.goalSelector.add(1, new ModDruggedBehaviourGoal(this, 2));
+        this.goalSelector.add(2, new ModDruggedBehaviourGoal(this, 2));
     }
 
+    
+    @Inject(method = "interactMob", at = @At(value = "TAIL"), cancellable = true)
+    protected void InjectInteractMob(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir){
+        ItemStack itemStack = player.getStackInHand(hand);
 
+        if(itemStack.getItem() == ModItems.CATNIP){
+            this.eat(player, hand, itemStack);
+            ((ModAnimalEntityMixinInterface)this).increaseCatsExpandedCatnipHighDuration(150);
+            cir.setReturnValue(ActionResult.SUCCESS);
+        }
+        
+        
+    }
+    
 
 }

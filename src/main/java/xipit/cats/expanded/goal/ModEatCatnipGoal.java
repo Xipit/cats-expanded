@@ -1,18 +1,17 @@
-package xipit.cats.expanded.util;
+package xipit.cats.expanded.goal;
 
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.ai.goal.MoveToTargetPosGoal;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.WorldView;
 import xipit.cats.expanded.block.ModBlocks;
+import xipit.cats.expanded.util.ModAnimalEntityMixinInterface;
 
 public class ModEatCatnipGoal
     extends MoveToTargetPosGoal {
@@ -20,12 +19,11 @@ public class ModEatCatnipGoal
     protected final Random random = new Random();
     private static final int EATING_TIME = 40;
     protected int timer;
-    private static final int HIGH_DURATION = 300;
+    protected final AnimalEntity tameableMob;
 
-
-
-    public ModEatCatnipGoal(PathAwareEntity mob, double speed, int range, int maxYDifference) {
+    public ModEatCatnipGoal(AnimalEntity mob, double speed, int range, int maxYDifference) {
         super(mob, speed, range, maxYDifference);
+        tameableMob = mob;
     }
 
 
@@ -73,10 +71,7 @@ public class ModEatCatnipGoal
 
 
     private void devourCatnip(BlockState state) {
-        // Nausea is important for ModDruggedBehaviourGoal that simulates the effects of catnip
-        mob.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, HIGH_DURATION));
-        mob.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, HIGH_DURATION));
-        mob.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, HIGH_DURATION));
+        ((ModAnimalEntityMixinInterface)mob).increaseCatsExpandedCatnipHighDuration(150);
 
         //TODO: add custom sound
         mob.playSound(SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, 1.0f, 1.0f);

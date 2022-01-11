@@ -6,7 +6,8 @@
   "mixins": [
     "ModCatEntityMixin",
     "ModOcelotEntityMixin",
-    "ModCatSpawnerMixin"
+    "ModCatSpawnerMixin",
+    "ModAnimalEntityMixin"
   ],
   "client": [
     "ExampleMixin"

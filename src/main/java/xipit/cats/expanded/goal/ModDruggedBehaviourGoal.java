@@ -1,20 +1,19 @@
-package xipit.cats.expanded.util;
+package xipit.cats.expanded.goal;
 
 import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.entity.ai.FuzzyTargeting;
 import net.minecraft.entity.ai.goal.WanderAroundGoal;
-import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.PathAwareEntity;
-import net.minecraft.entity.passive.CatEntity;
-import net.minecraft.entity.passive.OcelotEntity;
 import net.minecraft.util.math.Vec3d;
+import xipit.cats.expanded.util.ModAnimalEntityMixinInterface;
 
 public class ModDruggedBehaviourGoal 
 extends WanderAroundGoal{
     public static final float CHANCE = 0.001f;
-    protected static final double speed = 3;
+    protected static final double speed = 1.75;
     protected final float probability;
     
 
@@ -25,7 +24,15 @@ extends WanderAroundGoal{
 
     @Override
     public boolean canStart(){
-        return mob.hasStatusEffect(StatusEffects.NAUSEA) && super.canStart();
+        Vec3d vec3d;
+        if ((vec3d = this.getWanderTarget()) == null) {
+            return false;
+        }
+        this.targetX = vec3d.x;
+        this.targetY = vec3d.y;
+        this.targetZ = vec3d.z;
+
+        return ((ModAnimalEntityMixinInterface)mob).getCatsExpandedCatnipHighDuration() > 0;
     }
 
     @Override
@@ -36,8 +43,18 @@ extends WanderAroundGoal{
             return vec3d == null ? super.getWanderTarget() : vec3d;
         }
         if (this.mob.getRandom().nextFloat() >= this.probability) {
-            return FuzzyTargeting.find(this.mob, 5, 3);
+            return FuzzyTargeting.find(this.mob, 6, 3);
         }
         return super.getWanderTarget();
+    }
+
+    @Override
+    public boolean canStop(){
+        return ((ModAnimalEntityMixinInterface)mob).getCatsExpandedCatnipHighDuration() == 0;
+    }
+
+    @Override
+    public void tick() {
+        ((ModAnimalEntityMixinInterface)mob).decreaseCatsExpandedCatnipHighDuration(2);
     }
 }
