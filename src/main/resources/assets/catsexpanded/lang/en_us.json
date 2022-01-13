@@ -1,7 +1,7 @@
 {
     "item.catsexpanded.catears": "Catears",
-    "item.catsexpanded.catears.tooltip": "Catears that are worn on the head",
+    "item.catsexpanded.catears.tooltip": "worn on the head",
     "item.catsexpanded.catnip": "Catnip",
-    "item.catsexpanded.catnip.tooltip": "Catnip for kitties",
-    "itemGroup.catsexpanded.general": "Cute Accessories"
+    "item.catsexpanded.catnip.tooltip": "can be planted or fed to cats",
+    "itemGroup.catsexpanded.general": "Cats Expanded"
 }

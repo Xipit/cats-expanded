@@ -4,8 +4,6 @@ import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.entity.ai.FuzzyTargeting;
 import net.minecraft.entity.ai.goal.WanderAroundGoal;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.util.math.Vec3d;
 import xipit.cats.expanded.util.ModAnimalEntityMixinInterface;

@@ -1,4 +1,4 @@
-package xipit.cats.expanded.item;
+package xipit.cats.expanded.armor;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;

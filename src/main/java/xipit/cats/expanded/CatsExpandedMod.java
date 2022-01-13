@@ -2,14 +2,12 @@ package xipit.cats.expanded;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import xipit.cats.expanded.block.ModBlocks;
 import xipit.cats.expanded.item.ModItems;
-import xipit.cats.expanded.render.CatearArmorRenderer;
 import xipit.cats.expanded.world.gen.ModWorldGen;
 
 import org.apache.logging.log4j.LogManager;

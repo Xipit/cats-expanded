@@ -17,7 +17,6 @@ public class ModEatCatnipGoal
     extends MoveToTargetPosGoal {
 
     protected final Random random = new Random();
-    private static final int EATING_TIME = 40;
     protected int timer;
     protected final AnimalEntity tameableMob;
 
