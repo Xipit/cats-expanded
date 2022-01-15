@@ -74,6 +74,7 @@ public class ModEatCatnipGoal
 
         //TODO: add custom sound
         mob.playSound(SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, 1.0f, 1.0f);
+        //mob.playSound(SoundEvents.ENTITY_CAT_EAT, 1.0f, 1.0f);
         mob.world.setBlockState(this.targetPos, (BlockState)state.with(ModBlocks.CATNIP_BUSH.AGE, 1), Block.NOTIFY_LISTENERS);
     }
 

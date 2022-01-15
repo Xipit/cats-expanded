@@ -14,6 +14,7 @@ import net.minecraft.entity.passive.OcelotEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
@@ -56,6 +57,7 @@ public abstract class ModOcelotEntityMixin
         if(itemStack.getItem() == ModItems.CATNIP){
             this.eat(player, hand, itemStack);
             ((ModAnimalEntityMixinInterface)this).increaseCatsExpandedCatnipHighDuration(150);
+            this.playSound(SoundEvents.ENTITY_CAT_EAT, 1.0f, 1.0f);
             
             player.incrementStat(ModStats.AMOUNT_OF_CATNIP_FED_TO_CATS);
             cir.setReturnValue(ActionResult.SUCCESS);

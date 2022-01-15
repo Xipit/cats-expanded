@@ -9,7 +9,7 @@ public class ModStats {
 
 
     public static void register(){
-        CatsExpandedMod.LOGGER.info("Registering Modstats");
+        CatsExpandedMod.LOGGER.info("Registering ModStats");
 
 		RegistryHelper.registerStatistic(AMOUNT_OF_CATNIP_FED_TO_CATS);
     }

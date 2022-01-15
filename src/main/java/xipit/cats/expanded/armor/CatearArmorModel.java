@@ -1,5 +1,5 @@
 // Made with Blockbench 4.1.1
-// Exported for Minecraft version 1.17 Mojmap
+// Exported for Minecraft version 1.17+
 // Paste this class into your mod and generate all required imports
 
 package xipit.cats.expanded.armor;
