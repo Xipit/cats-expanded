@@ -19,7 +19,7 @@ public class ModItems {
 
    
     public static void register(){
-        System.out.println("Registering ModItems for " + CatsExpandedMod.MOD_ID);
+        CatsExpandedMod.LOGGER.info("Registering ModItems");
 
         RegistryHelper.registerItem("catears", CATEARS);
         RegistryHelper.registerItem("catnip", CATNIP);

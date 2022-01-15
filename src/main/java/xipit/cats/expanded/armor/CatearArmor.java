@@ -18,11 +18,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
-// import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import xipit.cats.expanded.util.ModelHandler;
 import xipit.cats.expanded.util.RegistryHelper;
 
+/*
+ *    base of code is sourced from @Noaaan from https://github.com/Noaaan/MythicMetals
+ */
 
 public class CatearArmor extends ArmorItem{
 
@@ -51,7 +53,7 @@ public class CatearArmor extends ArmorItem{
     protected BipedEntityModel<LivingEntity> provideArmorModelForSlot(EquipmentSlot slot) {
         var models = MinecraftClient.getInstance().getEntityModelLoader();
         var root = models.getModelPart(ModelHandler.CATEAR);
-        return new BipedEntityModel<LivingEntity>(root);
+        return new HelmetModel(root, slot);
     }
 
     @NotNull
@@ -62,8 +64,6 @@ public class CatearArmor extends ArmorItem{
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext){
         tooltip.add(new TranslatableText("item.catsexpanded.catears.tooltip"));
-
-        //tooltip.add(new TranslatableText("item.simplecatears.catears.tooltip").formatted((Formatting.RED)));
     }
     
 }

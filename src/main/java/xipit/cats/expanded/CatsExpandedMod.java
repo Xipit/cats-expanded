@@ -8,6 +8,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import xipit.cats.expanded.block.ModBlocks;
 import xipit.cats.expanded.item.ModItems;
+import xipit.cats.expanded.stats.ModStats;
 import xipit.cats.expanded.world.gen.ModWorldGen;
 
 import org.apache.logging.log4j.LogManager;
@@ -30,12 +31,11 @@ public class CatsExpandedMod implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-		System.out.println("Initializing " + MOD_ID);
-
-		//ArmorRenderer.register(new CatearArmorRenderer(), ModItems.CATEARS);
+		LOGGER.info("Initializing ...");
 
 		ModItems.register();
 		ModBlocks.register();
+		ModStats.register();
 
 		ModWorldGen.generateModWorldGen();
 	}

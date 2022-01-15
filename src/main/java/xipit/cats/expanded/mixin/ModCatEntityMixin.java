@@ -20,6 +20,7 @@ import net.minecraft.world.World;
 import xipit.cats.expanded.goal.ModDruggedBehaviourGoal;
 import xipit.cats.expanded.goal.ModEatCatnipGoal;
 import xipit.cats.expanded.item.ModItems;
+import xipit.cats.expanded.stats.ModStats;
 import xipit.cats.expanded.util.ModAnimalEntityMixinInterface;
 
 // helpful link:    https://github.com/SpongePowered/Mixin/wiki/Introduction-to-Mixins---Understanding-Mixin-Architecture
@@ -56,6 +57,8 @@ public abstract class ModCatEntityMixin
         if(itemStack.getItem() == ModItems.CATNIP){
             this.eat(player, hand, itemStack);
             ((ModAnimalEntityMixinInterface)this).increaseCatsExpandedCatnipHighDuration(150);
+
+            player.incrementStat(ModStats.AMOUNT_OF_CATNIP_FED_TO_CATS);
             cir.setReturnValue(ActionResult.SUCCESS);
         }
         

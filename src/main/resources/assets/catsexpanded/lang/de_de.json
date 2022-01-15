@@ -3,5 +3,6 @@
     "item.catsexpanded.catears.tooltip": "werden auf dem Kopf getragen",
     "item.catsexpanded.catnip": "Katzenminze",
     "item.catsexpanded.catnip.tooltip": "kann gepflanzt oder direkt an Katzen verfüttert werden",
-    "itemGroup.catsexpanded.general": "Cats Expanded"
+    "itemGroup.catsexpanded.general": "Cats Expanded",
+    "stat.catsexpanded.amount_of_catnip_fed_to_cats": "Katzenminze an Katzen verfüttert"
 }

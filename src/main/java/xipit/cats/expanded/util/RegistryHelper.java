@@ -6,6 +6,9 @@ import net.minecraft.block.Block;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.stat.Stat;
+import net.minecraft.stat.StatFormatter;
+import net.minecraft.stat.Stats;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -63,5 +66,15 @@ public class RegistryHelper {
         var result = new EntityModelLayer(id(name), layer);
         AccessorEntityModelLayers.getAllModels().add(result);
         return result;
+    }
+
+    public static Stat<Identifier> registerStatistic(Identifier id){
+        Registry.register(Registry.CUSTOM_STAT, id.getPath(), id);
+        return Stats.CUSTOM.getOrCreateStat(id, StatFormatter.DEFAULT);
+    }
+    
+    public static Stat<Identifier> registerStatistic(Identifier id, StatFormatter formatter){
+        Registry.register(Registry.CUSTOM_STAT, id.getPath(), id);
+        return Stats.CUSTOM.getOrCreateStat(id, formatter);
     }
 }

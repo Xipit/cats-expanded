@@ -17,7 +17,7 @@ public class ModBlocks {
 
     // function called on mod initalization
     public static void register(){
-        System.out.println("Registering ModBlocks for " + CatsExpandedMod.MOD_ID);
+        CatsExpandedMod.LOGGER.info("Registering ModBlocks");
 
         RegistryHelper.registerBlock("catnip_bush", CATNIP_BUSH);
     }

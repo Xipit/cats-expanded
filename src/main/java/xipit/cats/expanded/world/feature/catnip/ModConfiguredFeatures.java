@@ -40,6 +40,6 @@ public class ModConfiguredFeatures {
     }
 
     public static void registerConfiguredFeatures(){
-        System.out.println("Registering ModConfiguredFeatures for " + CatsExpandedMod.MOD_ID);
+        CatsExpandedMod.LOGGER.info("Registering ModConfiguredFeatures for " + CatsExpandedMod.MOD_ID);
     }
 }
