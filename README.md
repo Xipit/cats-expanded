@@ -5,7 +5,7 @@ Cats Expanded is a fabric mod for minecraft that, well, expands on all things ca
 ## Features
 - adds a new catnip block, including world generation, interaction with cats, etc.
 - adds new "catnip-high" status for cats
-- adds catears (TODO: custom model)
+- adds catears 
 - cats can now spawn everywhere -> more cats (TODO: configurable)
 
 
