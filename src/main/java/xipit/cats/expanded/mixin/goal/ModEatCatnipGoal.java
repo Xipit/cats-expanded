@@ -1,4 +1,4 @@
-package xipit.cats.expanded.goal;
+package xipit.cats.expanded.mixin.goal;
 
 import java.util.Random;
 
