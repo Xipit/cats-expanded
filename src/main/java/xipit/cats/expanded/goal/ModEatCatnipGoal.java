@@ -10,6 +10,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.WorldView;
+import xipit.cats.expanded.block.CatnipBushBlock;
 import xipit.cats.expanded.block.ModBlocks;
 import xipit.cats.expanded.util.ModAnimalEntityMixinInterface;
 
@@ -40,7 +41,7 @@ public class ModEatCatnipGoal
     @Override
     protected boolean isTargetPos(WorldView world, BlockPos pos) {
         BlockState blockState = world.getBlockState(pos);
-        return blockState.isOf(ModBlocks.CATNIP_BUSH) && blockState.get(ModBlocks.CATNIP_BUSH.AGE) >= 2;
+        return blockState.isOf(ModBlocks.CATNIP_BUSH) && blockState.get(CatnipBushBlock.AGE) >= 2;
     }
 
     //TODO: add custom sound
@@ -68,14 +69,13 @@ public class ModEatCatnipGoal
         }
     }
 
-
     private void devourCatnip(BlockState state) {
         ((ModAnimalEntityMixinInterface)mob).increaseCatsExpandedCatnipHighDuration(150);
 
         //TODO: add custom sound
         mob.playSound(SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, 1.0f, 1.0f);
         //mob.playSound(SoundEvents.ENTITY_CAT_EAT, 1.0f, 1.0f);
-        mob.world.setBlockState(this.targetPos, (BlockState)state.with(ModBlocks.CATNIP_BUSH.AGE, 1), Block.NOTIFY_LISTENERS);
+        mob.world.setBlockState(this.targetPos, (BlockState)state.with(CatnipBushBlock.AGE, 1), Block.NOTIFY_LISTENERS);
     }
 
     @Override

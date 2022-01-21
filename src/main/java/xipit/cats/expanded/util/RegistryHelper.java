@@ -1,6 +1,11 @@
 package xipit.cats.expanded.util;
 
 
+import com.oroarmor.config.Config;
+import com.oroarmor.config.command.ConfigCommand;
+
+import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
@@ -26,14 +31,12 @@ public class RegistryHelper {
         return new Identifier(CatsExpandedMod.MOD_ID, name);
     }
 
-
     public static Item registerItem(String name, Item item){
         if (item instanceof BlockItem) {
             ((BlockItem)item).appendBlocks(Item.BLOCK_ITEMS, item);
         }
         return Registry.register(Registry.ITEM, id(name), item);
     }
-
 
     public static PlacedFeature registerPlacedFeature(String name, PlacedFeature placedFeature){
         return Registry.register(BuiltinRegistries.PLACED_FEATURE, id(name), placedFeature);
@@ -47,11 +50,13 @@ public class RegistryHelper {
     public static Block registerBlock(String name, Block block){
         return Registry.register(Registry.BLOCK, id(name), block);
     }
+
     // register custom mod block with item
     public static Block registerBlockWithItem(String name, Block block){
         registerBlockItem(name, block);
         return Registry.register(Registry.BLOCK, id(name), block);
     }
+
     // register accompanied item for one block
     public static Item registerBlockItem(String name, Block block){
         return Registry.register(Registry.ITEM, id(name), 
@@ -76,5 +81,12 @@ public class RegistryHelper {
     public static Stat<Identifier> registerStatistic(Identifier id, StatFormatter formatter){
         Registry.register(Registry.CUSTOM_STAT, id.getPath(), id);
         return Stats.CUSTOM.getOrCreateStat(id, formatter);
+    }
+
+    public static void registerConfig(Config config){
+        config.readConfigFromFile();
+        config.saveConfigToFile();
+        ServerLifecycleEvents.SERVER_STOPPED.register(instance -> config.saveConfigToFile());
+        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> new ConfigCommand(config).register(dispatcher, true));
     }
 }

@@ -13,7 +13,7 @@
     "sources": ""
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/catsexpanded/icon.png",
 
   "environment": "*",
@@ -23,6 +23,9 @@
     ],
     "client": [
       "xipit.cats.expanded.CatsExpandedClient"
+    ],
+    "modmenu": [
+      "xipit.cats.expanded.config.ModMenuIntegration"
     ]
   },
   "mixins": [

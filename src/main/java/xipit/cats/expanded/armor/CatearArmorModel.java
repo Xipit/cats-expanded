@@ -6,18 +6,12 @@ package xipit.cats.expanded.armor;
 
 
 import net.minecraft.client.model.ModelData;
-import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.model.ModelPartBuilder;
 import net.minecraft.client.model.ModelPartData;
 import net.minecraft.client.model.ModelTransform;
 
 public class CatearArmorModel{
-	private final ModelPart head;
-
-	public CatearArmorModel(ModelPart root) {
-		this.head = root;
-	}
-
+	
 	public static ModelData getModelData(){
 		ModelData data = new ModelData();
 		ModelPartData root = data.getRoot();

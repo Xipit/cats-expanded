@@ -1,0 +1,29 @@
+CATS EXPANDED
+
+FABRIC 1.18.1 Mod
+
+Targetgroup:
+- All people who like cats
+- Catear type of people
+- vanilla gamers that want simple vanilla-like additions
+
+Features:
+- expanded Cat and Ocelot AI 
+    * includes new catnip-high status
+- catnip-bush generation
+- catears
+    * recipe (WIP): 
+        i have no idea
+        goals:
+            no killing of animals
+            midgame item, overworld only
+            not very hard to achieve, but should require some effort
+            catnip included 
+
+
+Ideas:
+- catnip essence (catnip x9)
+- cat paintings
+- dyeable catears
+- particles when catnip high
+- catnip induced catears tempt cats
