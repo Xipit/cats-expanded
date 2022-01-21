@@ -44,7 +44,7 @@ implements Spawner{
     // Tail -> last return statement
     @Inject(method = "spawn", at = @At("TAIL"), cancellable = true)
     protected void InjectSpawn(ServerWorld world, boolean arg1, boolean spawnAnimals, CallbackInfoReturnable<Integer> cir){
-        //check configs
+        // check configs
         if(ReadModConfig.spawnConfigs.get(ModConfig.extraCatSpawnID).getAsBoolean()){
             cir.setReturnValue(0);
         }

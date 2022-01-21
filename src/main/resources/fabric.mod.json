@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "catsexpanded",
-  "version": "${version}",
+  "version": "$version",
 
   "name": "Cats Expanded",
   "description": "Adds more cat stuff to Minecraft!",

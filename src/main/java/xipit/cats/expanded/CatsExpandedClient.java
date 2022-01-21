@@ -9,8 +9,8 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;
-import xipit.cats.expanded.armor.CatearArmor;
 import xipit.cats.expanded.block.ModBlocks;
+import xipit.cats.expanded.item.armor.CatearArmor;
 import xipit.cats.expanded.util.ModelHandler;
 
 @Environment(EnvType.CLIENT)
