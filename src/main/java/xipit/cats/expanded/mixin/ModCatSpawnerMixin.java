@@ -19,8 +19,6 @@ import net.minecraft.util.math.Box;
 import net.minecraft.world.SpawnHelper;
 import net.minecraft.world.gen.CatSpawner;
 import net.minecraft.world.gen.Spawner;
-import xipit.cats.expanded.config.ModConfig;
-import xipit.cats.expanded.config.ReadModConfig;
 
 @Mixin(CatSpawner.class)
 public abstract class ModCatSpawnerMixin 
@@ -45,9 +43,9 @@ implements Spawner{
     @Inject(method = "spawn", at = @At("TAIL"), cancellable = true)
     protected void InjectSpawn(ServerWorld world, boolean arg1, boolean spawnAnimals, CallbackInfoReturnable<Integer> cir){
         // check configs
-        if(ReadModConfig.spawnConfigs.get(ModConfig.extraCatSpawnID).getAsBoolean()){
+       /* if(ReadModConfig.spawnConfigs.get(ModSettings.extraCatSpawnID).getAsBoolean()){
             cir.setReturnValue(0);
-        }
+        }*/
 
         // copied, because blockpos is needed. locals could be used, but couldnt get it to work
         ServerPlayerEntity playerEntity = world.getRandomAlivePlayer();

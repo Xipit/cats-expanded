@@ -1,11 +1,5 @@
 package xipit.cats.expanded.util;
 
-
-import com.oroarmor.config.Config;
-import com.oroarmor.config.command.ConfigCommand;
-
-import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
@@ -81,12 +75,5 @@ public class RegistryHelper {
     public static Stat<Identifier> registerStatistic(Identifier id, StatFormatter formatter){
         Registry.register(Registry.CUSTOM_STAT, id.getPath(), id);
         return Stats.CUSTOM.getOrCreateStat(id, formatter);
-    }
-
-    public static void registerConfig(Config config){
-        config.readConfigFromFile();
-        config.saveConfigToFile();
-        ServerLifecycleEvents.SERVER_STOPPED.register(instance -> config.saveConfigToFile());
-        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> new ConfigCommand(config).register(dispatcher, true));
     }
 }

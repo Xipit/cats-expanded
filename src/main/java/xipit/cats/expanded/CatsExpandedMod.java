@@ -7,14 +7,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import xipit.cats.expanded.block.ModBlocks;
-import xipit.cats.expanded.config.ModConfig;
-import xipit.cats.expanded.config.ReadModConfig;
+import xipit.cats.expanded.config.ModSettings;
 import xipit.cats.expanded.item.ModItems;
 import xipit.cats.expanded.stats.ModStats;
-import xipit.cats.expanded.util.RegistryHelper;
 import xipit.cats.expanded.world.gen.ModWorldGen;
-
-import com.oroarmor.config.Config;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,7 +22,7 @@ public class CatsExpandedMod implements ModInitializer {
 	public static final String MOD_ID = "catsexpanded";
 	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
-	public static final Config CONFIG = new ModConfig();
+	public static final ModSettings CONFIG = new ModSettings();
 
 	public static final ItemGroup CATEAR_GROUP = FabricItemGroupBuilder.create(new Identifier(MOD_ID, "general"))
 	.icon(() -> new ItemStack(Items.CYAN_TERRACOTTA))
@@ -39,16 +35,14 @@ public class CatsExpandedMod implements ModInitializer {
 		// Proceed with mild caution.
 		LOGGER.info("Initializing ...");
 
-		//TODO: check permission levels for players and give it to registerConfig
-		RegistryHelper.registerConfig(CONFIG);
-		ReadModConfig.readConfig(CONFIG);
+		// new config
+		CONFIG.load();
+
 
 		ModItems.register();
 		ModBlocks.register();
 		ModStats.register();
 
 		ModWorldGen.generateModWorldGen();
-
-		LOGGER.info("... Finished!");
 	}
 }
