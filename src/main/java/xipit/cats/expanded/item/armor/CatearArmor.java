@@ -1,5 +1,5 @@
 
-package xipit.cats.expanded.armor;
+package xipit.cats.expanded.item.armor;
 
 import java.util.List;
 

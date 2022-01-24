@@ -2,7 +2,7 @@
 // Exported for Minecraft version 1.17+
 // Paste this class into your mod and generate all required imports
 
-package xipit.cats.expanded.armor;
+package xipit.cats.expanded.item.armor;
 
 
 import net.minecraft.client.model.ModelData;

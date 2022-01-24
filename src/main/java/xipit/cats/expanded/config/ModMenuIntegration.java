@@ -1,11 +1,17 @@
 package xipit.cats.expanded.config;
 
-import com.oroarmor.config.screen.ModMenuConfigScreen;
+import com.terraformersmc.modmenu.api.ConfigScreenFactory;
+import com.terraformersmc.modmenu.api.ModMenuApi;
 
+import me.lortseam.completeconfig.gui.ConfigScreenBuilder;
+import me.lortseam.completeconfig.gui.cloth.ClothConfigScreenBuilder;
 import xipit.cats.expanded.CatsExpandedMod;
 
-public class ModMenuIntegration extends ModMenuConfigScreen {
-    public ModMenuIntegration() {
-        super(CatsExpandedMod.CONFIG);
+public class ModMenuIntegration implements ModMenuApi{
+    ConfigScreenBuilder screenBuilder = new ClothConfigScreenBuilder();
+
+    @Override
+    public ConfigScreenFactory<?> getModConfigScreenFactory(){
+        return parent -> screenBuilder.build(parent, CatsExpandedMod.CONFIG);
     }
 }

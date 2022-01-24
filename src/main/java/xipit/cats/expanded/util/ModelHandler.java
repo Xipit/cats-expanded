@@ -4,7 +4,7 @@ import java.util.function.BiConsumer;
 
 import net.minecraft.client.model.TexturedModelData;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
-import xipit.cats.expanded.armor.CatearArmorModel;
+import xipit.cats.expanded.item.armor.CatearArmorModel;
 
 /*
  *  basic implementation is sourced from @Noaaan from https://github.com/Noaaan/MythicMetals

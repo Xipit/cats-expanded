@@ -4,5 +4,8 @@
     "item.catsexpanded.catnip": "Catnip",
     "item.catsexpanded.catnip.tooltip": "can be planted or fed to cats",
     "itemGroup.catsexpanded.general": "Cats Expanded",
-    "stat.catsexpanded.amount_of_catnip_fed_to_cats": "Catnip fed to cats"
+    "stat.catsexpanded.amount_of_catnip_fed_to_cats": "Catnip fed to cats",
+
+    "config.catsexpanded.modServerConfigGroup.spawningGroup": "Spawning Configuration",
+    "config.catsexpanded.modServerConfigGroup.spawningGroup.extraCatSpawning": "extra non conditional cat-spawning"
 }
