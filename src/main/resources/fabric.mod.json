@@ -24,9 +24,6 @@
     "client": [
       "xipit.cats.expanded.CatsExpandedClient"
     ],
-    "server": [
-      "xipit.cats.expanded.CatsExpandedServer"
-    ],
     "modmenu": [
       "xipit.cats.expanded.config.ModMenuIntegration"
     ]
