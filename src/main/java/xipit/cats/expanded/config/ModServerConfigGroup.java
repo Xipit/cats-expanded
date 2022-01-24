@@ -10,6 +10,7 @@ public class ModServerConfigGroup implements ConfigGroup{
     @Transitive
     public static class SpawningGroup implements ConfigGroup{
 
+        // Comment in the .conf file
         @ConfigEntry(comment = "Enable extra non-conditional cat-spawns")
         public boolean extraCatSpawning = false;
     }
