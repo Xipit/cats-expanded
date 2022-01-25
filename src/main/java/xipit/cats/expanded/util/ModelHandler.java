@@ -14,7 +14,6 @@ public class ModelHandler {
     public static final EntityModelLayer CATEAR = RegistryHelper.model(("catear_armor"));
 
     public static void init(BiConsumer<EntityModelLayer, TexturedModelData> consumer){
-        // TODO: insert BlockBench Model class
         consumer.accept(CATEAR, TexturedModelData.of(CatearArmorModel.getModelData(), 16, 16));
     }
 }

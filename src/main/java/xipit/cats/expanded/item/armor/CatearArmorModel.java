@@ -42,9 +42,9 @@ public class CatearArmorModel{
 				.uv(8,0)
 				.cuboid(-5.0F, -11.0F, 0.0F, 1.0F, 1.0F, 1.0F)
 				.uv(4,0)
-				.cuboid(-5.0F, -10.0F, 0.25F, 1.0F, 3.0F, 1.0F)
+				.cuboid(-5.0F, -10.0F, 0.4F, 1.0F, 3.0F, 1.0F)
 				.uv(0,6)
-				.cuboid(-4.0F, -9.0F, 0.25F, 1.0F, 2.0F, 1.0F)
+				.cuboid(-4.0F, -9.0F, 0.4F, 1.0F, 2.0F, 1.0F)
 			, ModelTransform.NONE
 		);
 		head.addChild(
@@ -67,10 +67,10 @@ public class CatearArmorModel{
 				.cuboid(4.0F, -11.0F, 0.0F, 1.0F, 1.0F, 1.0F)
 				.uv(4,0)
 				.mirrored(true)
-				.cuboid(4.0F, -10.0F, 0.25F, 1.0F, 3.0F, 1.0F)
+				.cuboid(4.0F, -10.0F, 0.4F, 1.0F, 3.0F, 1.0F)
 				.uv(0,6)
 				.mirrored(true)
-				.cuboid(3.0F, -9.0F, 0.25F, 1.0F, 2.0F, 1.0F)
+				.cuboid(3.0F, -9.0F, 0.4F, 1.0F, 2.0F, 1.0F)
 		, ModelTransform.NONE
 		);
 

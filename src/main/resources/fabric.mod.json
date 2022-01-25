@@ -10,7 +10,8 @@
   ],
   "contact": {
     "homepage": "",
-    "sources": "https://github.com/Xipit/cats-expanded"
+    "sources": "https://github.com/Xipit/cats-expanded",
+    "issues": "https://github.com/Xipit/cats-expanded/issues"
   },
 
   "license": "MIT",
