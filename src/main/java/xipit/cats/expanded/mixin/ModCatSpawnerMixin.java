@@ -47,6 +47,7 @@ implements Spawner{
             cir.setReturnValue(0);
         }*/
 
+
         // copied, because blockpos is needed. locals could be used, but couldnt get it to work
         ServerPlayerEntity playerEntity = world.getRandomAlivePlayer();
         Random random = world.random;

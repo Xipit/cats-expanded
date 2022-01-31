@@ -1,6 +1,7 @@
 plugins {
 	id 'fabric-loom' version '0.10-SNAPSHOT'
 	id 'maven-publish'
+	id "io.freefair.lombok" version "6.3.0"
 }
 
 sourceCompatibility = JavaVersion.VERSION_17

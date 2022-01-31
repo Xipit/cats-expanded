@@ -1,5 +1,6 @@
 package xipit.cats.expanded.config;
 
+import lombok.Getter;
 import me.lortseam.completeconfig.api.ConfigEntry;
 import me.lortseam.completeconfig.api.ConfigGroup;
 
@@ -11,6 +12,7 @@ public class ModServerConfigGroup implements ConfigGroup{
     public static class SpawningGroup implements ConfigGroup{
 
         // Comment in the .conf file
+        @Getter
         @ConfigEntry(comment = "Enable extra non-conditional cat-spawns")
         public boolean extraCatSpawning = false;
     }

@@ -22,7 +22,7 @@ public class CatsExpandedMod implements ModInitializer {
 	public static final String MOD_ID = "catsexpanded";
 	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
-	public static final ModSettings CONFIG = new ModSettings();
+	public static ModSettings CONFIG = new ModSettings();
 
 	public static final ItemGroup CATEAR_GROUP = FabricItemGroupBuilder.create(new Identifier(MOD_ID, "general"))
 	.icon(() -> new ItemStack(Items.CYAN_TERRACOTTA))
@@ -37,7 +37,8 @@ public class CatsExpandedMod implements ModInitializer {
 
 		// new config
 		CONFIG.load();
-
+		
+		
 
 		ModItems.register();
 		ModBlocks.register();
