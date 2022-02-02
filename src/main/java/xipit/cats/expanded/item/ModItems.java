@@ -13,7 +13,6 @@ import xipit.cats.expanded.util.RegistryHelper;
 public class ModItems {
     public static final ArmorMaterial CATEAR_ARMOR_MATERIAL = new CatearArmorMaterial();
 
-
     public static final CatearArmor CATEARS = new CatearArmor(CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().group(CatsExpandedMod.CATEAR_GROUP));
     public static final AliasedBlockItem CATNIP = new CatnipItem(ModBlocks.CATNIP_BUSH, new Item.Settings().group(CatsExpandedMod.CATEAR_GROUP));
 

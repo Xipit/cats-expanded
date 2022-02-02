@@ -74,27 +74,28 @@ implements Fertilizable {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!(entity instanceof LivingEntity) || entity.getType() == EntityType.FOX || entity.getType() == EntityType.BEE || entity.getType() == EntityType.CAT) {
+        if (!(entity instanceof LivingEntity) || entity.getType() == EntityType.FOX || entity.getType() == EntityType.BEE || entity.getType() == EntityType.CAT || entity.getType() == EntityType.OCELOT) {
             return;
         }
         // unwanted behaviour: cant jump (like in spider webs)
-        entity.slowMovement(state, new Vec3d(0.9f, 1f, 0.9f));
+        entity.slowMovement(state, new Vec3d(0.95f, 1f, 0.95f));
     }
 
     // TODO: add custom sound
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        boolean bl;
-        int i = state.get(AGE);
-        bl = i == 3;
-        if (!bl && player.getStackInHand(hand).isOf(Items.BONE_MEAL)) {
+        int age = state.get(AGE);
+        boolean ageIs3 = (age == 3);
+        if (!ageIs3 && player.getStackInHand(hand).isOf(Items.BONE_MEAL)) {
             return ActionResult.PASS;
         }
-        if (i > 1) {
-            int j = 1 + world.random.nextInt(2);
-            CatnipBushBlock.dropStack(world, pos, new ItemStack(ModItems.CATNIP, j + (bl ? 1 : 0)));
+        if (age > 1) {
+            int j = 1 + world.random.nextInt(1);
+            CatnipBushBlock.dropStack(world, pos, new ItemStack(ModItems.CATNIP, j + (ageIs3 ? 1 : 0)));
+
             world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0f, 0.8f + world.random.nextFloat() * 0.4f);
             world.setBlockState(pos, (BlockState)state.with(AGE, 1), Block.NOTIFY_LISTENERS);
+            
             return ActionResult.success(world.isClient);
         }
         return ActionResult.PASS;

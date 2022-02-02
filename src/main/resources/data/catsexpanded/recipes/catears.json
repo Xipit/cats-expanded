@@ -1,21 +1,21 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-      "WWW",
-      "WR ",
-      "WWW"
+      "F F",
+      "FLF",
+      "L L"
     ],
     "key": {
-      "W": {
-        "tag": "minecraft:logs"
+      "F": {
+        "item": "minecraft:feather"
       },
-      "R": {
-        "item": "minecraft:redstone"
+      "L": {
+        "item": "minecraft:leather"
       }
     },
     "result": {
       "item": "catsexpanded:catears",
-      "count": 4
+      "count": 1
     }
   }
 
