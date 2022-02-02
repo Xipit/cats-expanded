@@ -6,6 +6,5 @@
     "itemGroup.catsexpanded.general": "Cats Expanded",
     "stat.catsexpanded.amount_of_catnip_fed_to_cats": "Katzenminze an Katzen verfüttert",
 
-    "config.catsexpanded.modServerConfigGroup.spawningGroup": "Spawning Konfigurierung",
-    "config.catsexpanded.modServerConfigGroup.spawningGroup.extraCatSpawning": "extra (nicht bedingtes) Katzen Spawning"
+    "config.catsexpanded.extraCatSpawning": "extra (nicht bedingtes) Katzen Spawning"
 }
