@@ -3,16 +3,16 @@ Cats Expanded is a fabric mod for minecraft that, well, expands on all things :c
 
 
 ## 😸 - Features
-- adds a new catnip block, including world generation, interaction with cats/ocelots, etc.
+- adds new catnip-bush block, including world generation, interaction with cats/ocelots, etc.
 - adds new "catnip-high" status for cats/ocelots
 - adds catears 
 - cats can now spawn everywhere (needs to be enabled in config/catsexpanded.conf)
 
 
 ## :octocat: - Dependencies
-- [CompleteConig](https://github.com/noahvogt/CompleteConfig) for configuration
-- [Modmenu](https://github.com/TerraformersMC/ModMenu) for friendly and und uncomplex access to configuration
-- [ClothConfig API](https://shedaniel.gitbook.io/cloth-config/) for displaying configuration
+- [CompleteConig](https://github.com/noahvogt/CompleteConfig) -> configuration
+- [Modmenu](https://github.com/TerraformersMC/ModMenu) -> easy access to configuration
+- [ClothConfig API](https://shedaniel.gitbook.io/cloth-config/) -> displaying configuration
 
 
 ## 😽 - Credits
