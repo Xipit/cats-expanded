@@ -37,7 +37,6 @@ public class CatsExpandedMod implements ModInitializer {
 
 		// applies config
 		CONFIG.load();
-		
 
 		ModItems.register();
 		ModBlocks.register();

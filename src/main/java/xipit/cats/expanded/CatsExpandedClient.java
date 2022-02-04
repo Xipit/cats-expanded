@@ -26,11 +26,6 @@ public class CatsExpandedClient implements ClientModInitializer{
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CATNIP_BUSH, RenderLayer.getCutout());
         ModelHandler.init((loc, def) -> EntityModelLayerRegistry.registerModelLayer(loc, () -> def));
         registerArmorRenderer();
-
-        if (FabricLoader.getInstance().isModLoaded("cloth-config")) {
-            ConfigScreenBuilder.setMain(CatsExpandedMod.MOD_ID, new ClothConfigScreenBuilder());
-        }
-        
     }
     
     private void registerArmorRenderer() {
