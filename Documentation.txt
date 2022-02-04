@@ -12,13 +12,9 @@ Features:
     * includes new catnip-high status
 - catnip-bush generation
 - catears
-    * recipe (WIP): 
-        i have no idea
-        goals:
-            no killing of animals
-            midgame item, overworld only
-            not very hard to achieve, but should require some effort
-            catnip included 
+    * recipe            F F
+      F -> Feather      FLF
+      L -> Leather      L L
 
 
 Ideas:
