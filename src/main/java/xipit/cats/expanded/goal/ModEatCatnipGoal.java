@@ -19,13 +19,10 @@ public class ModEatCatnipGoal
 
     protected final Random random = new Random();
     protected int timer;
-    protected final AnimalEntity tameableMob;
 
     public ModEatCatnipGoal(AnimalEntity mob, double speed, int range, int maxYDifference) {
         super(mob, speed, range, maxYDifference);
-        tameableMob = mob;
     }
-
 
 
     @Override

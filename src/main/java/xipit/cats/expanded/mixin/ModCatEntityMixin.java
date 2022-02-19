@@ -32,7 +32,6 @@ public abstract class ModCatEntityMixin
 
     protected ModCatEntityMixin(EntityType<? extends TameableEntity> entityType, World world) {
         super((EntityType<? extends TameableEntity>)entityType, world);
-        
     }
 
     // Return -> before every return statement, ordinal = 0 -> only at the first return statement

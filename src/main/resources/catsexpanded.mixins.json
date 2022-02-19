@@ -4,11 +4,12 @@
   "package": "xipit.cats.expanded.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "AccessorEntityModelLayers",
     "ModCatEntityMixin",
     "ModOcelotEntityMixin",
     "ModCatSpawnerMixin",
     "ModAnimalEntityMixin",
-    "AccessorEntityModelLayers"
+    "ModCreeperEntityMixin"
   ],
   "client": [
     "ModTitleScreenMixin"
