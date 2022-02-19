@@ -40,8 +40,8 @@ public abstract class ModCatEntityMixin
     protected void InjectInitGoals(CallbackInfo ci){
 
         // catnip can now be used to tempt cats and is a higher priority than fish
-        TemptGoal newTemptGoal = new TemptGoal(this,0.8, Ingredient.ofItems(ModItems.CATNIP), true);
-        this.goalSelector.add(3, newTemptGoal);
+        TemptGoal catnipTemptGoal = new TemptGoal(this,0.8, Ingredient.ofItems(ModItems.CATNIP), true);
+        this.goalSelector.add(3, catnipTemptGoal);
 
         // the desire to consume catnip
         this.goalSelector.add(7, new ModEatCatnipGoal(this, (double)1.2f, 12, 1));

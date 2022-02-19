@@ -9,8 +9,6 @@ import xipit.cats.expanded.util.ModAnimalEntityMixinInterface;
 public class ModAnimalEntityMixin
 implements ModAnimalEntityMixinInterface{
     private static final int MAX_CATNIP_HIGH_DURATION = 400;
-    
-    private Boolean catsExpandedIsCatnipDrugged = false;
 
     private int catsExpandedCatnipHighDuration = 0;
 
@@ -32,14 +30,6 @@ implements ModAnimalEntityMixinInterface{
         }else{
             catsExpandedCatnipHighDuration -= time;
         }
-    }
-
-    public Boolean getCatsExpandedIsCatnipDrugged(){
-        return catsExpandedIsCatnipDrugged;
-    }
-
-    public void setCatsExpandedIsCatnipDrugged(Boolean isCatnipDrugged){
-        catsExpandedIsCatnipDrugged = isCatnipDrugged;
     }
     
 }
