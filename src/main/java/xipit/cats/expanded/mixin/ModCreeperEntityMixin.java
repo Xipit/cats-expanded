@@ -14,9 +14,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
-import xipit.cats.expanded.CatsExpandedMod;
 import xipit.cats.expanded.goal.ModCatnipEscapeGoal;
 import xipit.cats.expanded.item.ModItems;
+import xipit.cats.expanded.stats.ModStats;
 import xipit.cats.expanded.util.ModCreeperEntityMixinInterface;
 
 // helpful link:    https://github.com/SpongePowered/Mixin/wiki/Introduction-to-Mixins---Understanding-Mixin-Architecture
@@ -56,12 +56,19 @@ implements ModCreeperEntityMixinInterface{
         ItemStack itemStack = player.getStackInHand(hand);
 
         if(itemStack.getItem() == ModItems.CATNIP){
+            if(((ModCreeperEntityMixinInterface)this).getCatsExpandedIsCatnipEscaping()){
+                cir.setReturnValue(ActionResult.PASS);
+            }
+
             ((ModCreeperEntityMixinInterface)this).setCatsExpandedIsCatnipEscaping(true);;
 
-            CatsExpandedMod.LOGGER.info("YOOOOOO CREEPER ATE CATNIP");
+            // actually use catnip, normally this.eat() is used
+            if (!player.getAbilities().creativeMode) {
+                itemStack.decrement(1);
+            }
 
-            //player.incrementStat(ModStats.AMOUNT_OF_CATNIP_FED_TO_CATS);
-            cir.setReturnValue(ActionResult.SUCCESS);
+            player.incrementStat(ModStats.AMOUNT_OF_CATNIP_SCARED_CREEPERS);
+            cir.setReturnValue(ActionResult.success(this.world.isClient));
         }
         
         

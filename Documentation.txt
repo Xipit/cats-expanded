@@ -24,3 +24,8 @@ Ideas:
 - particles when catnip high
 - catnip induced catears tempt cats
 - catnip can be given to hostile mobs and they will flee
+- instead of "MEOW" print a random cat fact on initialize
+
+
+Issues:
+- doesnt save statistics
