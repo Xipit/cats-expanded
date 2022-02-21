@@ -26,6 +26,3 @@ Ideas:
 - catnip can be given to hostile mobs and they will flee
 - instead of "MEOW" print a random cat fact on initialize
 
-
-Issues:
-- doesnt save statistics
