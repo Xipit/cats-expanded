@@ -11,7 +11,8 @@
     "ModAnimalEntityMixin",
     "ModCreeperEntityMixin",
     "GrowCropsGoalMixin",
-    "BeeEntityInvoker"
+    "BeeEntityInvoker",
+    "ComposterBlockMixin"
   ],
   "client": [
     "ModTitleScreenMixin"

@@ -18,7 +18,7 @@ Features:
       L -> Leather      L L
 - instead of "MEOW" print a random cat fact on initialize
 - catnip can be given to creepers and they will flee
-
+- catnip works with composters
 
 Ideas:
 - catnip essence (catnip x9)

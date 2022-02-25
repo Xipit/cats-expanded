@@ -16,7 +16,7 @@ import xipit.cats.expanded.block.ModBlocks;
 
 import org.spongepowered.asm.mixin.injection.At;
 
-// interaction with catnip 
+// interaction with catnip -> bees now want to grow catnip, same behaviour as with sweet_berry_bush
 @Mixin(targets = "net.minecraft.entity.passive.BeeEntity$GrowCropsGoal")
 public abstract class GrowCropsGoalMixin
 {
