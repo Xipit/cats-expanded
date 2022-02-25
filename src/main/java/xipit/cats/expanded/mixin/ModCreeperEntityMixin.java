@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
-import xipit.cats.expanded.goal.ModCatnipEscapeGoal;
+import xipit.cats.expanded.goal.ModCatnipEscapeFromPlayerGoal;
 import xipit.cats.expanded.item.ModItems;
 import xipit.cats.expanded.stats.ModStats;
 import xipit.cats.expanded.util.ModCreeperEntityMixinInterface;
@@ -22,7 +22,7 @@ import xipit.cats.expanded.util.ModCreeperEntityMixinInterface;
 // helpful link:    https://github.com/SpongePowered/Mixin/wiki/Introduction-to-Mixins---Understanding-Mixin-Architecture
 // also:            https://fabricmc.net/wiki/tutorial:mixin_accessors
 @Mixin(value = CreeperEntity.class)
-public class ModCreeperEntityMixin
+public abstract class ModCreeperEntityMixin
 extends HostileEntity 
 implements ModCreeperEntityMixinInterface{
 
@@ -46,7 +46,7 @@ implements ModCreeperEntityMixinInterface{
     protected void InjectInitGoals(CallbackInfo ci){
         
         // flee from players, after ingesting catnip
-        this.goalSelector.add(1, new ModCatnipEscapeGoal(this, 6.0f, 1.0, 1.2));
+        this.goalSelector.add(1, new ModCatnipEscapeFromPlayerGoal(this, 6.0f, 1.0, 1.2));
         
     }
 

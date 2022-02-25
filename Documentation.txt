@@ -7,6 +7,7 @@ Targetgroup:
 - Catear type of people
 - vanilla gamers that want simple vanilla-like additions
 
+
 Features:
 - expanded Cat and Ocelot AI 
     * includes new catnip-high status
@@ -15,6 +16,8 @@ Features:
     * recipe            F F
       F -> Feather      FLF
       L -> Leather      L L
+- instead of "MEOW" print a random cat fact on initialize
+- catnip can be given to creepers and they will flee
 
 
 Ideas:
@@ -23,6 +26,6 @@ Ideas:
 - dyeable catears
 - particles when catnip high
 - catnip induced catears tempt cats
-- catnip can be given to hostile mobs and they will flee
-- instead of "MEOW" print a random cat fact on initialize
+
+
 

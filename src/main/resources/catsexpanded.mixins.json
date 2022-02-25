@@ -9,7 +9,9 @@
     "ModOcelotEntityMixin",
     "ModCatSpawnerMixin",
     "ModAnimalEntityMixin",
-    "ModCreeperEntityMixin"
+    "ModCreeperEntityMixin",
+    "GrowCropsGoalMixin",
+    "BeeEntityInvoker"
   ],
   "client": [
     "ModTitleScreenMixin"

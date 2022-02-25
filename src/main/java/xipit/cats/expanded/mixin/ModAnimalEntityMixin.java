@@ -6,7 +6,7 @@ import net.minecraft.entity.passive.AnimalEntity;
 import xipit.cats.expanded.util.ModAnimalEntityMixinInterface;
 
 @Mixin(value = AnimalEntity.class)
-public class ModAnimalEntityMixin
+public abstract class ModAnimalEntityMixin
 implements ModAnimalEntityMixinInterface{
     private static final int MAX_CATNIP_HIGH_DURATION = 400;
 

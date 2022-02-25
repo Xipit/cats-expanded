@@ -5,13 +5,13 @@ import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import xipit.cats.expanded.util.ModCreeperEntityMixinInterface;
 
-public class ModCatnipEscapeGoal
+public class ModCatnipEscapeFromPlayerGoal
 extends FleeEntityGoal<PlayerEntity>{
 
     private double accessableFleeSpeed;
 
 
-    public ModCatnipEscapeGoal(PathAwareEntity mob, float distance, double slowSpeed,
+    public ModCatnipEscapeFromPlayerGoal(PathAwareEntity mob, float distance, double slowSpeed,
         double fastSpeed) {
         super(mob, PlayerEntity.class, distance, slowSpeed, fastSpeed);
         accessableFleeSpeed = fastSpeed;
