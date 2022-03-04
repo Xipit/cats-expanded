@@ -17,8 +17,8 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.SpawnHelper;
-import net.minecraft.world.gen.CatSpawner;
-import net.minecraft.world.gen.Spawner;
+import net.minecraft.world.spawner.CatSpawner;
+import net.minecraft.world.spawner.Spawner;
 import xipit.cats.expanded.CatsExpandedMod;
 
 @Mixin(CatSpawner.class)
