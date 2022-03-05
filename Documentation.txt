@@ -27,5 +27,8 @@ Ideas:
 - particles when catnip high
 - catnip induced catears tempt cats
 
+Issues:
+- when cat is owned, one cant right click to feed them catnip
+
 
 
