@@ -4,8 +4,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
-import xipit.cats.expanded.world.feature.ModPlacedFeatures;
-import xipit.cats.expanded.world.feature.newUpdate.CatnipBushPlacedFeature;
+import xipit.cats.expanded.world.feature.CatnipBushPlacedFeature;
 
 // configure where it is placed
 public class ModCatnipGeneration {

@@ -1,4 +1,4 @@
-package xipit.cats.expanded.world.feature.newUpdate;
+package xipit.cats.expanded.world.feature;
 
 
 import java.util.List;
@@ -16,6 +16,7 @@ import xipit.cats.expanded.CatsExpandedMod;
 import xipit.cats.expanded.block.CatnipBushBlock;
 import xipit.cats.expanded.block.ModBlocks;
 
+// configure what gets generated
 public class CatnipBushConfiguredFeature {
 
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> PATCH_CATNIP_BUSH = ConfiguredFeatures.register(

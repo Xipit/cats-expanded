@@ -1,4 +1,4 @@
-package xipit.cats.expanded.world.feature.newUpdate;
+package xipit.cats.expanded.world.feature;
 
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.util.registry.RegistryKey;
@@ -9,12 +9,13 @@ import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
 import xipit.cats.expanded.util.RegistryHelper;
 import xipit.cats.expanded.world.modifiers.ModSmallSquarePlacementModifier;
 
+// configure where it gets placed annd how
 public class CatnipBushPlacedFeature {
 
     public static final RegistryKey<PlacedFeature> PATCH_CATNIP_PLACED_KEY = RegistryHelper.registerPlacedFeatureKey("patch_catnip_placed");
 
-    public static final RegistryEntry<PlacedFeature> PATCH_CATNIP = PlacedFeatures.register(
-        "patch_catnip", 
+    public static final RegistryEntry<PlacedFeature> PATCH_CATNIP_PLACED = PlacedFeatures.register(
+        "patch_catnip_placed", 
             CatnipBushConfiguredFeature.PATCH_CATNIP_BUSH, 
                 RarityFilterPlacementModifier.of(32), 
                     ModSmallSquarePlacementModifier.of(), 
