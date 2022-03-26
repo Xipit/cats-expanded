@@ -1,5 +1,6 @@
 package xipit.cats.expanded;
 
+import BipedEntityModel;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -7,9 +8,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.item.Item;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xipit.cats.expanded.block.ModBlocks;
 import xipit.cats.expanded.item.armor.CatearArmor;

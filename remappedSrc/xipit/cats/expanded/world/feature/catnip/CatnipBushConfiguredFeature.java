@@ -1,4 +1,4 @@
-package xipit.cats.expanded.world.feature.newUpdate;
+package xipit.cats.expanded.world.feature.catnip;
 
 
 import java.util.List;
