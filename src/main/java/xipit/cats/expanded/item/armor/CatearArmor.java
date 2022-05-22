@@ -15,6 +15,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
@@ -68,11 +69,16 @@ public class CatearArmor extends ArmorItem{
         return RegistryHelper.id(String.format("textures/models/catear_model_%s.png", dye));
     }
 
+    // REASON: Same translationkey for all dyed variants, since their name should not change
+    @Override
+    public String getTranslationKey() {
+        return "item.catsexpanded.catears";
+    }
+
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext){
         if(dye != "default"){
             tooltip.add(new TranslatableText("item.catsexpanded.dyed.tooltip").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-            tooltip.add(new TranslatableText(""));  // newLine
         }
     }
     

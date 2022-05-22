@@ -24,7 +24,7 @@ Features:
 Ideas:
 - catnip essence (catnip x9)
 - cat paintings
-- dyeable catears (maybe special version for catnip + catears? --> special model maybe)
+- dyeable catears (maybe special version for catnip + catears? --> special model maybe) (need to implement custom item textures as well)
 - particles when catnip high
 - catnip induced catears tempt cats
 - cat shrine (attracts cats, scares creeper, increases chance of catching fish in a certain radius)
