@@ -4,6 +4,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.Settings;
 import xipit.cats.expanded.CatsExpandedMod;
 import xipit.cats.expanded.block.ModBlocks;
 import xipit.cats.expanded.item.armor.CatearArmor;
@@ -12,8 +13,12 @@ import xipit.cats.expanded.util.RegistryHelper;
 
 public class ModItems {
     public static final ArmorMaterial CATEAR_ARMOR_MATERIAL = new CatearArmorMaterial();
+    public static final Settings CATEAR_GROUP = new Item.Settings().group(CatsExpandedMod.CATEAR_GROUP);
 
-    public static final CatearArmor CATEARS = new CatearArmor(CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().group(CatsExpandedMod.CATEAR_GROUP));
+    // Translationkey for CatearArmor is hardcoded --> wont change with different ids
+    public static final CatearArmor CATEARS         = new CatearArmor(CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, CATEAR_GROUP);
+    public static final CatearArmor CATEARS_CYAN    = new CatearArmor("cyan", CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, CATEAR_GROUP);
+
     public static final AliasedBlockItem CATNIP = new CatnipItem(ModBlocks.CATNIP_BUSH, new Item.Settings().group(CatsExpandedMod.CATEAR_GROUP));
 
    
@@ -21,6 +26,8 @@ public class ModItems {
         CatsExpandedMod.LOGGER.info("Registering ModItems");
 
         RegistryHelper.registerItem("catears", CATEARS);
+        RegistryHelper.registerItem("catears_cyan", CATEARS_CYAN);
+
         RegistryHelper.registerItem("catnip", CATNIP);
     }
 }

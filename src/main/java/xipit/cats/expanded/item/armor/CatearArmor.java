@@ -66,6 +66,12 @@ public class CatearArmor extends ArmorItem{
         return RegistryHelper.id(String.format("textures/models/catear_model_%s.png", dye));
     }
 
+    // REASON: Same translationkey for all dyed variants, since their name should not change
+    @Override
+    public String getTranslationKey() {
+        return "item.catsexpanded.catears";
+    }
+
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext){
         if(!dye.equals("default")){
