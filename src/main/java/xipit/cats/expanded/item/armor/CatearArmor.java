@@ -17,6 +17,7 @@ import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import xipit.cats.expanded.util.ModelHandler;
@@ -31,14 +32,20 @@ public class CatearArmor extends ArmorItem{
     @Environment(EnvType.CLIENT)
     private BipedEntityModel<LivingEntity> model;
     public final EquipmentSlot slot;
+    private final String dye;
 
     public CatearArmor(EquipmentSlot slot, Settings settings) {
         this(new CatearArmorMaterial(), slot, settings);
     }
 
     public CatearArmor(ArmorMaterial material, EquipmentSlot slot, Settings settings) {
+        this("default", new CatearArmorMaterial(), slot, settings);
+    }
+
+    public CatearArmor(String dye, ArmorMaterial material, EquipmentSlot slot, Settings settings) {
         super(material, slot, settings);
         this.slot = slot;
+        this.dye = dye;
     }
 
     @Environment(EnvType.CLIENT)
@@ -58,11 +65,16 @@ public class CatearArmor extends ArmorItem{
 
     @NotNull
     public Identifier getArmorTexture(ItemStack stack, EquipmentSlot slot) {
-        return RegistryHelper.id("textures/models/catear_model.png");
+        return RegistryHelper.id(String.format("textures/models/catear_model_%s.png", dye));
     }
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext){
+
+        if(dye != "default"){
+            tooltip.add(new TranslatableText("item.catsexpanded.dyed.tooltip").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
+            tooltip.add(new TranslatableText(""));  // newLine
+        }
         tooltip.add(new TranslatableText("item.catsexpanded.catears.tooltip"));
     }
     
