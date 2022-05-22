@@ -70,12 +70,10 @@ public class CatearArmor extends ArmorItem{
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext){
-
         if(dye != "default"){
             tooltip.add(new TranslatableText("item.catsexpanded.dyed.tooltip").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
             tooltip.add(new TranslatableText(""));  // newLine
         }
-        tooltip.add(new TranslatableText("item.catsexpanded.catears.tooltip"));
     }
     
 }
