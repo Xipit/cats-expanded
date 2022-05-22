@@ -30,14 +30,20 @@ public class CatearArmor extends ArmorItem{
     @Environment(EnvType.CLIENT)
     private BipedEntityModel<LivingEntity> model;
     public final EquipmentSlot slot;
+    private final String dye;
 
     public CatearArmor(EquipmentSlot slot, Settings settings) {
         this(new CatearArmorMaterial(), slot, settings);
     }
 
     public CatearArmor(ArmorMaterial material, EquipmentSlot slot, Settings settings) {
+        this("default", new CatearArmorMaterial(), slot, settings);
+    }
+
+    public CatearArmor(String dye, ArmorMaterial material, EquipmentSlot slot, Settings settings) {
         super(material, slot, settings);
         this.slot = slot;
+        this.dye = dye;
     }
 
     @Environment(EnvType.CLIENT)
@@ -52,16 +58,19 @@ public class CatearArmor extends ArmorItem{
     protected BipedEntityModel<LivingEntity> provideArmorModelForSlot(EquipmentSlot slot) {
         var models = MinecraftClient.getInstance().getEntityModelLoader();
         var root = models.getModelPart(ModelHandler.CATEAR);
-        return new HelmetModel(root, slot);
+        return new CatearArmorBipedEntityModel(root, slot);
     }
 
     @NotNull
     public Identifier getArmorTexture(ItemStack stack, EquipmentSlot slot) {
-        return RegistryHelper.id("textures/models/catear_model.png");
+        return RegistryHelper.id(String.format("textures/models/catear_model_%s.png", dye));
     }
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext){
+        if(!dye.equals("default")){
+            return;
+        }
         tooltip.add(Text.translatable("item.catsexpanded.catears.tooltip"));
     }
     
