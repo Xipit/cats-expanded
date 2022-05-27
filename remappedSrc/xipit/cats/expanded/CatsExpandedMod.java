@@ -42,6 +42,6 @@ public class CatsExpandedMod implements ModInitializer {
 		ModBlocks.register();
 		ModStats.register();
 
-		ModWorldGen.generateModWorldGen();
+		ModWorldGen.register();
 	}
 }
