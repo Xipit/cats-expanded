@@ -1,5 +1,8 @@
 package xipit.cats.expanded.mixin;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.ai.pathing.EntityNavigation;
+import net.minecraft.predicate.block.BlockStatePredicate;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -14,10 +17,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
+import xipit.cats.expanded.ModCreeperNavigation;
+import xipit.cats.expanded.block.ModBlocks;
 import xipit.cats.expanded.goal.ModCatnipEscapeFromPlayerGoal;
 import xipit.cats.expanded.item.ModItems;
 import xipit.cats.expanded.stats.ModStats;
 import xipit.cats.expanded.util.ModCreeperEntityMixinInterface;
+
+import java.util.function.Predicate;
 
 // helpful link:    https://github.com/SpongePowered/Mixin/wiki/Introduction-to-Mixins---Understanding-Mixin-Architecture
 // also:            https://fabricmc.net/wiki/tutorial:mixin_accessors
@@ -41,11 +48,13 @@ implements ModCreeperEntityMixinInterface{
         catsExpandedIsCatnipEscaping = value;
     }
 
+    private static final Predicate<BlockState> CATNIP_BUSH_PREDICATE = BlockStatePredicate.forBlock(ModBlocks.CATNIP_BUSH);
+
     // Return -> before every return statement, ordinal = 0 -> only at the first return statement
     @Inject(method = "initGoals", at = @At(value= "RETURN", ordinal = 0))
     protected void InjectInitGoals(CallbackInfo ci){
         
-        // flee from players, after ingesting catnip
+        // flee from players after ingesting catnip
         this.goalSelector.add(1, new ModCatnipEscapeFromPlayerGoal(this, 6.0f, 1.0, 1.2));
         
     }
@@ -72,5 +81,11 @@ implements ModCreeperEntityMixinInterface{
         }
         
         
+    }
+
+    // pathfind around catnipBushBlock
+    @Override
+    protected EntityNavigation createNavigation(World world) {
+        return new ModCreeperNavigation(this, world);
     }
 }
