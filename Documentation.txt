@@ -26,6 +26,18 @@ Ideas:
 - dyeable catears
 - particles when catnip high
 - catnip induced catears tempt cats
+- cat shrine (attracts cats, scares creeper, increases chance of catching fish in a certain radius)
+    - maybe can enchant normal items with catnip to give them a cat related effect?
+    - example:
+        - fishing rod (higher chance to catch fish),
+        - catears (eating fish gives more food),
+        - food (can now be fed to cats),
+        - books (transform into cat-only nametags),
+        - sword (transform into cat-wand (summon cats?, attract cats, ...)
+        - painting (transform into cat painting, only has cat textures)
+    - crafting recipe similar to enchanting table, but includes fish and maybe catnip
+    --> non-awkward way to implement very specific cat-related items
+    - needs GUI (similar to enchanting table, but right side should be similar to crafting table. Needs special effects)
 
 Issues:
 - when cat is owned, one cant right click to feed them catnip
