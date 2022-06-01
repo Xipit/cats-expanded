@@ -29,6 +29,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import xipit.cats.expanded.item.ModItems;
+import xipit.cats.expanded.util.ModCreeperEntityMixinInterface;
 
 public class CatnipBushBlock
 extends PlantBlock
@@ -40,7 +41,7 @@ implements Fertilizable {
 
     public CatnipBushBlock(AbstractBlock.Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(AGE, 0));
+        this.setDefaultState((this.stateManager.getDefaultState()).with(AGE, 0));
     }
 
     @Override
@@ -68,15 +69,27 @@ implements Fertilizable {
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         int i = state.get(AGE);
         if (i < 3 && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
-            world.setBlockState(pos, (BlockState)state.with(AGE, i + 1), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos, state.with(AGE, i + 1), Block.NOTIFY_LISTENERS);
         }
     }
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!(entity instanceof LivingEntity) || entity.getType() == EntityType.FOX || entity.getType() == EntityType.BEE || entity.getType() == EntityType.CAT || entity.getType() == EntityType.OCELOT) {
+        final EntityType<?> entityType = entity.getType();
+
+        if (!(entity instanceof LivingEntity) || entityType == EntityType.FOX || entityType == EntityType.BEE || entityType == EntityType.CAT || entityType == EntityType.OCELOT) {
             return;
         }
+
+        if(entityType == EntityType.CREEPER){
+            if(state.get(AGE) >= 2 && !((ModCreeperEntityMixinInterface)entity).getCatsExpandedIsCatnipEscaping()){
+                ((ModCreeperEntityMixinInterface)entity).setCatsExpandedIsCatnipEscaping(true);
+            }
+
+            entity.slowMovement(state, new Vec3d(0.6f, 1f, 0.6f));
+            return;
+        }
+
         // unwanted behaviour: cant jump (like in spider webs)
         entity.slowMovement(state, new Vec3d(0.95f, 1f, 0.95f));
     }
@@ -91,10 +104,10 @@ implements Fertilizable {
         }
         if (age > 1) {
             int j = 1 + world.random.nextInt(1);
-            CatnipBushBlock.dropStack(world, pos, new ItemStack(ModItems.CATNIP, j + (ageIs3 ? 1 : 0)));
+            Block.dropStack(world, pos, new ItemStack(ModItems.CATNIP, j + (ageIs3 ? 1 : 0)));
 
             world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0f, 0.8f + world.random.nextFloat() * 0.4f);
-            world.setBlockState(pos, (BlockState)state.with(AGE, 1), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos, state.with(AGE, 1), Block.NOTIFY_LISTENERS);
             
             return ActionResult.success(world.isClient);
         }
@@ -119,7 +132,7 @@ implements Fertilizable {
     @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         int i = Math.min(3, state.get(AGE) + 1);
-        world.setBlockState(pos, (BlockState)state.with(AGE, i), Block.NOTIFY_LISTENERS);
+        world.setBlockState(pos, state.with(AGE, i), Block.NOTIFY_LISTENERS);
     }
 }
 

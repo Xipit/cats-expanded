@@ -17,7 +17,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
-import xipit.cats.expanded.ModCreeperNavigation;
 import xipit.cats.expanded.block.ModBlocks;
 import xipit.cats.expanded.goal.ModCatnipEscapeFromPlayerGoal;
 import xipit.cats.expanded.item.ModItems;
@@ -56,7 +55,6 @@ implements ModCreeperEntityMixinInterface{
         
         // flee from players after ingesting catnip
         this.goalSelector.add(1, new ModCatnipEscapeFromPlayerGoal(this, 6.0f, 1.0, 1.2));
-        
     }
 
 
@@ -69,7 +67,7 @@ implements ModCreeperEntityMixinInterface{
                 cir.setReturnValue(ActionResult.PASS);
             }
 
-            ((ModCreeperEntityMixinInterface)this).setCatsExpandedIsCatnipEscaping(true);;
+            ((ModCreeperEntityMixinInterface)this).setCatsExpandedIsCatnipEscaping(true);
 
             // actually use catnip, normally this.eat() is used
             if (!player.getAbilities().creativeMode) {
@@ -81,11 +79,5 @@ implements ModCreeperEntityMixinInterface{
         }
         
         
-    }
-
-    // pathfind around catnipBushBlock
-    @Override
-    protected EntityNavigation createNavigation(World world) {
-        return new ModCreeperNavigation(this, world);
     }
 }
