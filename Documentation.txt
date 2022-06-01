@@ -17,7 +17,7 @@ Features:
       F -> Feather      FLF
       L -> Leather      L L
 - instead of "MEOW" print a random cat fact on initialize
-- catnip can be given to creepers and they will flee
+- catnip can be given to creepers and they will flee (will also flee from walking on ripe catnip bushes, else they will be slowed more)
 - catnip works with composters
 
 Ideas:
