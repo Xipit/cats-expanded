@@ -18,8 +18,7 @@ extends AliasedBlockItem{
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext){
-        tooltip.add(new Text("item.catsexpanded.catnip.tooltip") {
-        });
+        tooltip.add(Text.translatable("item.catsexpanded.catnip.tooltip"));
     }
     
 }
