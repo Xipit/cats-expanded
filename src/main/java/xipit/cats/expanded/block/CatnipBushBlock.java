@@ -66,7 +66,7 @@ implements Fertilizable {
     }
 
     @Override
-    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random)  {
         int i = state.get(AGE);
         if (i < 3 && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
             world.setBlockState(pos, state.with(AGE, i + 1), Block.NOTIFY_LISTENERS);
@@ -104,7 +104,7 @@ implements Fertilizable {
         }
         if (age > 1) {
             int j = 1 + world.random.nextInt(1);
-            Block.dropStack(world, pos, new ItemStack(ModItems.CATNIP, j + (ageIs3 ? 1 : 0)));
+            CatnipBushBlock.dropStack(world, pos, new ItemStack(ModItems.CATNIP, j + (ageIs3 ? 1 : 0)));
 
             world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0f, 0.8f + world.random.nextFloat() * 0.4f);
             world.setBlockState(pos, state.with(AGE, 1), Block.NOTIFY_LISTENERS);
@@ -125,12 +125,12 @@ implements Fertilizable {
     }
 
     @Override
-    public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
+    public boolean canGrow(World world, net.minecraft.util.math.random.Random random, BlockPos pos, BlockState state) {
         return true;
     }
 
     @Override
-    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
+    public void grow(ServerWorld world, net.minecraft.util.math.random.Random random, BlockPos pos, BlockState state) {
         int i = Math.min(3, state.get(AGE) + 1);
         world.setBlockState(pos, state.with(AGE, i), Block.NOTIFY_LISTENERS);
     }
