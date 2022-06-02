@@ -50,7 +50,7 @@ implements Spawner{
 
         // copied, because blockpos is needed. locals could be used, but couldnt get it to work
         ServerPlayerEntity playerEntity = world.getRandomAlivePlayer();
-        Random random = world.random;
+        Random random = (Random) world.random;
         int i = (8 + random.nextInt(24)) * (random.nextBoolean() ? -1 : 1);
         int j = (8 + random.nextInt(24)) * (random.nextBoolean() ? -1 : 1);
         BlockPos blockPos = playerEntity.getBlockPos().add(i, 0, j);
