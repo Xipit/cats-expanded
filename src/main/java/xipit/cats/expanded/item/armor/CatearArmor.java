@@ -16,7 +16,6 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import xipit.cats.expanded.util.ModelHandler;
@@ -63,7 +62,7 @@ public class CatearArmor extends ArmorItem{
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext){
-        tooltip.add(new TranslatableText("item.catsexpanded.catears.tooltip"));
+        tooltip.add(Text.translatable("item.catsexpanded.catears.tooltip"));
     }
     
 }
