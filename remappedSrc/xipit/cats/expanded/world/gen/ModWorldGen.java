@@ -7,6 +7,7 @@ import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.GenerationStep;
 import xipit.cats.expanded.CatsExpandedMod;
@@ -25,7 +26,7 @@ public class ModWorldGen {
 
     public static void addPlacedFeatures(){
         BiomeModifications.addFeature(
-        	BiomeSelectors.categories((Biome.Category.PLAINS),(Biome.Category.FOREST)), 
+            BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.FOREST),
         	GenerationStep.Feature.VEGETAL_DECORATION, 
         	getPlacedFeature(getPlacedFeatureIdentifier(ModPlacedFeatures.PATCH_CATNIP_BUSH)));
     }
