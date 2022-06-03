@@ -1,24 +1,29 @@
 {
   "type": "minecraft:crafting_shapeless",
   "group": "catears",
-  "ingredients": [{
-    "item": "catsexpanded:catears",
-    "item": "minecraft:red_dye",
-    "item": "minecraft:orange_dye",
-    "item": "minecraft:yellow_dye",
-    "item": [{
-      "item": "minecraft:lime_dye",
-      "item": "minecraft:green_dye"}],
-    "item": [{
-      "item": "minecraft:light_blue_dye",
-      "item": "minecraft:cyan_dye",
-      "item": "minecraft:blue_dye",
-      "item": "minecraft:lapis_lazuli"}],
-    "item": [{
-      "item": "minecraft:pink_dye",
-      "item": "minecraft:magenta_dye",
-      "item": "minecraft:purple_dye"}]
-  }],
+  "ingredients": [
+    {
+      "item": "catsexpanded:catears"
+    },
+    {
+      "item": "minecraft:red_dye"
+    },
+    {
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "item": "minecraft:yellow_dye"
+    },
+    {
+      "tag": "catsexpanded:greenish_dyes"
+    },
+    {
+      "tag": "catsexpanded:blueish_dyes"
+    },
+    {
+      "tag": "catsexpanded:purpleish_dyes"
+    }
+  ],
   "result": {
     "item": "catsexpanded:catears_rainbow",
     "count": 1
