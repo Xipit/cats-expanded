@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "catears",
+  "ingredients": [
+    {
+      "item": "catsexpanded:catears"
+    },
+    {
+      "item": "minecraft:red_dye"
+    },
+    {
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "item": "minecraft:yellow_dye"
+    },
+    {
+      "tag": "catsexpanded:greenish_dyes"
+    },
+    {
+      "tag": "catsexpanded:blueish_dyes"
+    },
+    {
+      "tag": "catsexpanded:purpleish_dyes"
+    }
+  ],
+  "result": {
+    "item": "catsexpanded:catears_rainbow",
+    "count": 1
+  }
+}

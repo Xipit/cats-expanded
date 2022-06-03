@@ -19,11 +19,12 @@ Features:
 - instead of "MEOW" print a random cat fact on initialize
 - catnip can be given to creepers and they will flee (will also flee from walking on ripe catnip bushes, else they will be slowed more)
 - catnip works with composters
+- catnip can be used to craft pink dye
 
 Ideas:
 - catnip essence (catnip x9)
 - cat paintings
-- dyeable catears
+- dyeable catears (maybe special version for catnip + catears? --> special model maybe) (need to implement custom item textures as well)
 - particles when catnip high
 - catnip induced catears tempt cats
 - cat shrine (attracts cats, scares creeper, increases chance of catching fish in a certain radius)
@@ -40,7 +41,7 @@ Ideas:
     - needs GUI (similar to enchanting table, but right side should be similar to crafting table. Needs special effects)
 
 Issues:
-- when cat is owned, one cant right click to feed them catnip
+- [SOLVED] when cat is owned, one cant right click to feed them catnip
 
 
 
