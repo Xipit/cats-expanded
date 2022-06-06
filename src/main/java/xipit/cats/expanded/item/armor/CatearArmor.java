@@ -33,15 +33,11 @@ public class CatearArmor extends ArmorItem{
     private final String dye;
 
     public CatearArmor(EquipmentSlot slot, Settings settings) {
-        this(new CatearArmorMaterial(), slot, settings);
+        this("default", slot, settings);
     }
 
-    public CatearArmor(ArmorMaterial material, EquipmentSlot slot, Settings settings) {
-        this("default", new CatearArmorMaterial(), slot, settings);
-    }
-
-    public CatearArmor(String dye, ArmorMaterial material, EquipmentSlot slot, Settings settings) {
-        super(material, slot, settings);
+    public CatearArmor(String dye, EquipmentSlot slot, Settings settings) {
+        super(new CatearArmorMaterial(), slot, settings);
         this.slot = slot;
         this.dye = dye;
     }

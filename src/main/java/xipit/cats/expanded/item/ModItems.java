@@ -12,16 +12,15 @@ import xipit.cats.expanded.item.armor.CatearArmorMaterial;
 import xipit.cats.expanded.util.RegistryHelper;
 
 public class ModItems {
-    public static final ArmorMaterial CATEAR_ARMOR_MATERIAL = new CatearArmorMaterial();
     public static final Settings CATEAR_GROUP = new Item.Settings().group(CatsExpandedMod.CATEAR_GROUP);
 
     // Translationkey for CatearArmor is hardcoded --> wont change with different ids
-    public static final CatearArmor CATEARS         = new CatearArmor(CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, CATEAR_GROUP);
+    public static final CatearArmor CATEARS         = new CatearArmor(EquipmentSlot.HEAD, CATEAR_GROUP);
     // public static final CatearArmor CATEARS_CYAN    = new CatearArmor("cyan", CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, CATEAR_GROUP);
     // public static final CatearArmor CATEARS_MAGENTA    = new CatearArmor("magenta", CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, CATEAR_GROUP);
     // public static final CatearArmor CATEARS_PURPLE    = new CatearArmor("purple", CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, CATEAR_GROUP);
     // public static final CatearArmor CATEARS_RED    = new CatearArmor("red", CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, CATEAR_GROUP);
-    public static final CatearArmor CATEARS_RAINBOW    = new CatearArmor("rainbow", CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, CATEAR_GROUP);
+    public static final CatearArmor CATEARS_RAINBOW    = new CatearArmor("rainbow", EquipmentSlot.HEAD, CATEAR_GROUP);
 
     public static final AliasedBlockItem CATNIP = new CatnipItem(ModBlocks.CATNIP_BUSH, new Item.Settings().group(CatsExpandedMod.CATEAR_GROUP));
 
