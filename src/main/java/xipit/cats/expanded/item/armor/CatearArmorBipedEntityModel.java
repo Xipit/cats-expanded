@@ -12,10 +12,10 @@ import net.minecraft.entity.decoration.ArmorStandEntity;
  *  sourced from @Noaaan from https://github.com/Noaaan/MythicMetals
  */
 
-public class HelmetModel extends BipedEntityModel<LivingEntity> {
+public class CatearArmorBipedEntityModel extends BipedEntityModel<LivingEntity> {
     final EquipmentSlot slot;
 
-    public HelmetModel(ModelPart root, EquipmentSlot slot) {
+    public CatearArmorBipedEntityModel(ModelPart root, EquipmentSlot slot) {
         super(root);
         this.slot = slot;
     }

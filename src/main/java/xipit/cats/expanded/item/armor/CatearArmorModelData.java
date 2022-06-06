@@ -10,8 +10,8 @@ import net.minecraft.client.model.ModelPartBuilder;
 import net.minecraft.client.model.ModelPartData;
 import net.minecraft.client.model.ModelTransform;
 
-public class CatearArmorModel{
-	
+public class CatearArmorModelData {
+
 	public static ModelData getModelData(){
 		ModelData data = new ModelData();
 		ModelPartData root = data.getRoot();
