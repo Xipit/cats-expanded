@@ -13,9 +13,7 @@ import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
@@ -57,11 +55,15 @@ public class CatearArmor extends ArmorItem{
     protected BipedEntityModel<LivingEntity> provideArmorModelForSlot(EquipmentSlot slot) {
         var models = MinecraftClient.getInstance().getEntityModelLoader();
         var root = models.getModelPart(ModelHandler.CATEAR);
-        return new HelmetModel(root, slot);
+
+        return new CatearArmorBipedEntityModel(root, slot);
     }
 
     @NotNull
     public Identifier getArmorTexture(ItemStack stack, EquipmentSlot slot) {
+        if(slot != EquipmentSlot.HEAD){
+            return RegistryHelper.id("");
+        }
         return RegistryHelper.id(String.format("textures/models/catear_model_%s.png", dye));
     }
 
@@ -73,7 +75,7 @@ public class CatearArmor extends ArmorItem{
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext){
-        if(dye != "default"){
+        if(!dye.equals("default")){
             tooltip.add(new TranslatableText("item.catsexpanded.dyed.tooltip").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
         }
     }
