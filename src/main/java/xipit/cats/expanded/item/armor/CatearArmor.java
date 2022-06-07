@@ -3,6 +3,7 @@ package xipit.cats.expanded.item.armor;
 
 import java.util.List;
 
+import net.minecraft.util.Formatting;
 import org.jetbrains.annotations.NotNull;
 
 import net.fabricmc.api.EnvType;
