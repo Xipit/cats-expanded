@@ -2,13 +2,11 @@ package xipit.cats.expanded.item;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Settings;
 import xipit.cats.expanded.CatsExpandedMod;
 import xipit.cats.expanded.block.ModBlocks;
 import xipit.cats.expanded.item.armor.CatearArmor;
-import xipit.cats.expanded.item.armor.CatearArmorMaterial;
 import xipit.cats.expanded.util.RegistryHelper;
 
 public class ModItems {
