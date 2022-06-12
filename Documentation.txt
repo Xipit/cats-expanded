@@ -45,3 +45,5 @@ Issues:
 
 
 
+Dependencies:
+- MidnightLib (for config, test if i can implement ModMenu or if it will crash when it isnt there)
