@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "id": "catsexpanded",
-  "version": "1.1.0",
+  "version": "1.1.1",
 
   "name": "Cats Expanded",
   "description": "Adds more cat stuff to Minecraft!",
   "authors": [
-    "xipit"
+    "xipit",
+    "Hiko"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/cats-expanded",
@@ -24,9 +25,6 @@
     ],
     "client": [
       "xipit.cats.expanded.CatsExpandedClient"
-    ],
-    "modmenu": [
-      "xipit.cats.expanded.config.ModMenuIntegration"
     ]
   },
   "mixins": [

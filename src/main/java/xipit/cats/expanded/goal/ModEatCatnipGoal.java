@@ -1,13 +1,12 @@
 package xipit.cats.expanded.goal;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.ai.goal.MoveToTargetPosGoal;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.WorldView;
 import xipit.cats.expanded.block.CatnipBushBlock;
@@ -17,7 +16,6 @@ import xipit.cats.expanded.util.ModAnimalEntityMixinInterface;
 public class ModEatCatnipGoal
     extends MoveToTargetPosGoal {
 
-    protected final Random random = new Random();
     protected int timer;
 
     public ModEatCatnipGoal(AnimalEntity mob, double speed, int range, int maxYDifference) {
@@ -50,7 +48,7 @@ public class ModEatCatnipGoal
             } else {
                 ++this.timer;
             }
-        } else if (!this.hasReached() && random.nextFloat() < 0.05f) {
+        } else if (!this.hasReached() && Random.create().nextFloat() < 0.05f) {
             mob.playSound(SoundEvents.ENTITY_FOX_SNIFF, 1.0f, 1.0f);
         }
         super.tick();
@@ -77,7 +75,7 @@ public class ModEatCatnipGoal
 
     @Override
     public boolean canStart() {
-        return !mob.isSleeping() && super.canStart() && random.nextInt(10) < 7;
+        return !mob.isSleeping() && super.canStart() && Random.create().nextInt(10) < 7;
     }
 
     @Override
