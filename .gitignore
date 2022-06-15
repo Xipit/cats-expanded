@@ -2,7 +2,7 @@
 
 .gradle/
 build/*
-!build/libs
+# !build/libs
 out/
 classes/
 
