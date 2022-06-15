@@ -1,5 +1,6 @@
 package xipit.cats.expanded;
 
+import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
@@ -7,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import xipit.cats.expanded.block.ModBlocks;
-import xipit.cats.expanded.config.ModSettings;
+import xipit.cats.expanded.config.CatsExpandedConfig;
 import xipit.cats.expanded.item.ModItems;
 import xipit.cats.expanded.stats.ModStats;
 import xipit.cats.expanded.world.gen.ModWorldGen;
@@ -22,8 +23,6 @@ public class CatsExpandedMod implements ModInitializer {
 	public static final String MOD_ID = "catsexpanded";
 	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
-	public static final ModSettings CONFIG = new ModSettings();
-
 	public static final ItemGroup CATEAR_GROUP = FabricItemGroupBuilder.create(new Identifier(MOD_ID, "general"))
 	.icon(() -> new ItemStack(Items.CYAN_TERRACOTTA))
 	.build();
@@ -35,8 +34,7 @@ public class CatsExpandedMod implements ModInitializer {
 		// Proceed with mild caution.
 		LOGGER.info("Initializing ...");
 
-		// applies config
-		CONFIG.load();
+		MidnightConfig.init(MOD_ID, CatsExpandedConfig.class);
 
 		ModItems.register();
 		ModBlocks.register();

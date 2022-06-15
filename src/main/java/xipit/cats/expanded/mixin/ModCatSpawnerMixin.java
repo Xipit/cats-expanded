@@ -1,7 +1,6 @@
 package xipit.cats.expanded.mixin;
 
-import java.util.Random;
-
+import net.minecraft.util.math.random.Random;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,6 +19,7 @@ import net.minecraft.world.SpawnHelper;
 import net.minecraft.world.spawner.CatSpawner;
 import net.minecraft.world.spawner.Spawner;
 import xipit.cats.expanded.CatsExpandedMod;
+import xipit.cats.expanded.config.CatsExpandedConfig;
 
 @Mixin(CatSpawner.class)
 public abstract class ModCatSpawnerMixin 
@@ -44,13 +44,13 @@ implements Spawner{
     @Inject(method = "spawn", at = @At("TAIL"), cancellable = true)
     protected void InjectSpawn(ServerWorld world, boolean arg1, boolean spawnAnimals, CallbackInfoReturnable<Integer> cir){
         // check configs
-        if(!CatsExpandedMod.CONFIG.isExtraCatSpawning()){
+        if(!CatsExpandedConfig.enableExtraCatSpawning){
             cir.setReturnValue(0);
         }
 
         // copied, because blockpos is needed. locals could be used, but couldnt get it to work
         ServerPlayerEntity playerEntity = world.getRandomAlivePlayer();
-        Random random = (Random) world.random;
+        Random random = world.random;
         int i = (8 + random.nextInt(24)) * (random.nextBoolean() ? -1 : 1);
         int j = (8 + random.nextInt(24)) * (random.nextBoolean() ? -1 : 1);
         BlockPos blockPos = playerEntity.getBlockPos().add(i, 0, j);

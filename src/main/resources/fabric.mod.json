@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "id": "catsexpanded",
-  "version": "1.1.0",
+  "version": "1.2.0+1.19.0",
 
   "name": "Cats Expanded",
   "description": "Adds more cat stuff to Minecraft!",
   "authors": [
-    "xipit"
+    "xipit",
+    "Hiko"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/cats-expanded",
@@ -24,9 +25,6 @@
     ],
     "client": [
       "xipit.cats.expanded.CatsExpandedClient"
-    ],
-    "modmenu": [
-      "xipit.cats.expanded.config.ModMenuIntegration"
     ]
   },
   "mixins": [
@@ -37,9 +35,22 @@
     "fabricloader": ">=0.14.6",
     "fabric": "*",
     "minecraft": "1.19",
-    "java": ">=17"
+    "java": ">=17",
+    "fabric-api" : ">=0.55.1+1.19"
   },
   "suggests": {
     "another-mod": "*"
+  },
+  "includes": {
+    "midnightlib": {
+      "version": "0.5.2",
+      "custom": {
+        "mc-publish": {
+          "ignore": false,
+          "modrinth": "midnightlib",
+          "curseforge": "midnightlib"
+        }
+      }
+    }
   }
 }
