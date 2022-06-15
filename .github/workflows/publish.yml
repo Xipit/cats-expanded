@@ -47,7 +47,7 @@ jobs:
           changelog-file: CHANGELOG.md
 
           loaders: fabric
-          game-versions: 1.19.0
+          game-versions: 1.19
           java: 17
 
           retry-attempts: 2
