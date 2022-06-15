@@ -53,28 +53,28 @@ jobs:
           retry-attempts: 2
           retry-delay: 10000
 
-        - name: Publish (Github)
-          uses: Kir-Antipov/mc-publish@v3.0
-          with:
-            github-tag: v1.2.0
-            github-generate-changelog: true
-            github-draft: false
-            github-prerelease: false
-            github-commitish: dev
-            github-discussion: Announcements
-            github-token: ${{ secrets.PUBLISH_GITHUB_TOKEN }}
+      - name: Publish (Github)
+        uses: Kir-Antipov/mc-publish@v3.0
+        with:
+          github-tag: v1.2.0
+          github-generate-changelog: true
+          github-draft: false
+          github-prerelease: false
+          github-commitish: dev
+          github-discussion: Announcements
+          github-token: ${{ secrets.PUBLISH_GITHUB_TOKEN }}
 
-            files-primary: build/libs/!(*-@(dev|sources)).jar
-            files-secondary: build/libs/*-@(dev|sources).jar
+          files-primary: build/libs/!(*-@(dev|sources)).jar
+          files-secondary: build/libs/*-@(dev|sources).jar
 
-            name: Cats Expanded 1.2.0 for Minecraft 1.19.0
-            version: 1.2.0+1.19.0
-            version-type: release
-            changelog-file: CHANGELOG.md
+          name: Cats Expanded 1.2.0 for Minecraft 1.19.0
+          version: 1.2.0+1.19.0
+          version-type: release
+          changelog-file: CHANGELOG.md
 
-            loaders: fabric
-            game-versions: 1.19.0
-            java: 17
+          loaders: fabric
+          game-versions: 1.19.0
+          java: 17
 
-            retry-attempts: 2
-            retry-delay: 10000
+          retry-attempts: 2
+          retry-delay: 10000
