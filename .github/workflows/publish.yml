@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: ./gradlew clean build
 
-      - name: MC-Publish (Modrinth / Curseforge)
+      - name: Publish (Modrinth / Curseforge)
         uses: Kir-Antipov/mc-publish@v3.0
         with:
           modrinth-id: FIzl2Jhk
@@ -53,7 +53,7 @@ jobs:
           retry-attempts: 2
           retry-delay: 10000
 
-        - name: MC-Publish (Github)
+        - name: Publish (Github)
           uses: Kir-Antipov/mc-publish@v3.0
           with:
             github-tag: v1.2.0
