@@ -19,6 +19,7 @@ import net.minecraft.world.SpawnHelper;
 import net.minecraft.world.spawner.CatSpawner;
 import net.minecraft.world.spawner.Spawner;
 import xipit.cats.expanded.CatsExpandedMod;
+import xipit.cats.expanded.config.CatsExpandedConfig;
 
 @Mixin(CatSpawner.class)
 public abstract class ModCatSpawnerMixin 
@@ -43,9 +44,9 @@ implements Spawner{
     @Inject(method = "spawn", at = @At("TAIL"), cancellable = true)
     protected void InjectSpawn(ServerWorld world, boolean arg1, boolean spawnAnimals, CallbackInfoReturnable<Integer> cir){
         // check configs
-        /// DISABLED DUE TO 1.19 ERROR FROM CLOTHCONFIG --> WILL FORK AND UPDATE MYSELF
-
-        cir.setReturnValue(0);
+        if(!CatsExpandedConfig.enableExtraCatSpawning){
+            cir.setReturnValue(0);
+        }
 
         // copied, because blockpos is needed. locals could be used, but couldnt get it to work
         ServerPlayerEntity playerEntity = world.getRandomAlivePlayer();
