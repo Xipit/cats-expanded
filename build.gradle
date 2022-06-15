@@ -38,9 +38,6 @@ dependencies {
 	// midnightlib -> for config
 	modImplementation include("maven.modrinth:midnightlib:${project.midnightlib_version}")
 
-	// modmenu
-	modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}")
-
 }
 
 processResources {

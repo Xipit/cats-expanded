@@ -8,5 +8,8 @@
     "stat.catsexpanded.amount_of_catnip_fed_to_cats": "Katzenminze an Katzen verfüttert",
     "stat.catsexpanded.amount_of_catnip_scared_creepers": "Creeper mit Katzenminze verjagt",
 
-    "config.catsexpanded.extraCatSpawning": "extra (nicht bedingtes) Katzen Spawning"
+    "catsexpanded.midnightconfig.enableExtraCatSpawning": "Erlaube Katzen außerhalb von Dörfern zu spawnen",
+    "catsexpanded.midnightconfig.title": "Cats Expanded Konfiguration",
+    "modmenu.descriptionTranslation.catsexpanded": "Fügt Katzenohren und Katzenminze hinzu. Probiere Katzenminze an Katzen & Ozelots oder Creeper aus!",
+    "modmenu.summaryTranslation.catsexpanded" : "Erweitert das Gameplay rund um Katzen"
 }
