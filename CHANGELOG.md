@@ -1,1 +1,4 @@
-- fixes incorrect and/or missing tooltips
+- adds back configuration
+  - uses MidnightLib now (-> old config files will no longer work, thus all configuration will be reset)
+  - Configuration (when modmenu is not installed) will be accessible via the options screen
+- no longer includes ModMenu or CompleteConfig (technically since 1.1.1)

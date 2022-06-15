@@ -39,5 +39,17 @@
   },
   "suggests": {
     "another-mod": "*"
+  },
+  "includes": {
+    "included-dependency": {
+      "version": "0.5.2",
+      "custom": {
+        "mc-publish": {
+          "ignore": false,
+          "modrinth": "midnightlib",
+          "curseforge": "midnightlib"
+        }
+      }
+    }
   }
 }
