@@ -6,7 +6,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: Kir-Antipov/mc-publish@v3.0
+
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: "temurin"
+          java-version: 17
+
+      - name: Make Gradle Wrapper Executable
+        if: ${{ runner.os != 'Windows' }}
+        run: chmod +x ./gradlew
+
+      - name: Build
+        run: ./gradlew clean build
+
+      - name: MC-Publish
+        uses: Kir-Antipov/mc-publish@v3.0
         with:
           modrinth-id: FIzl2Jhk
           modrinth-featured: true
@@ -25,7 +40,6 @@ jobs:
           github-token: ${{ secrets.PUBLISH_GITHUB_TOKEN }}
 
           files-primary: build/libs/!(*-@(dev|sources)).jar
-          files-secondary: build/libs/*-@(dev|sources).jar
 
           name: Cats Expanded 1.2.0 for Minecraft 1.19.0
           version: 1.2.0+1.19.0
