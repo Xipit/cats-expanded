@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: ./gradlew clean build
 
-      - name: Publish (Modrinth / Curseforge)
+      - name: Publish (CurseForge/Modrinth)
         uses: Kir-Antipov/mc-publish@v3.0
         with:
           modrinth-id: FIzl2Jhk
