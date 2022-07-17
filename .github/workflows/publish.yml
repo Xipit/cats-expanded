@@ -57,11 +57,7 @@ jobs:
         uses: Kir-Antipov/mc-publish@v3.0
         with:
           github-tag: v1.2.0
-          github-generate-changelog: true
           github-draft: false
-          github-prerelease: false
-          github-commitish: dev
-          github-discussion: Announcements
           github-token: ${{ secrets.PUBLISH_GITHUB_TOKEN }}
 
           files-primary: build/libs/!(*-@(dev|sources)).jar
