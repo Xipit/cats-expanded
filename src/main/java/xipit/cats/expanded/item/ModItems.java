@@ -14,11 +14,11 @@ public class ModItems {
 
     // Translationkey for CatearArmor is hardcoded --> wont change with different ids
     public static final CatearArmor CATEARS         = new CatearArmor(EquipmentSlot.HEAD, CATEAR_GROUP);
-    // public static final CatearArmor CATEARS_CYAN    = new CatearArmor("cyan", CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, CATEAR_GROUP);
-    // public static final CatearArmor CATEARS_MAGENTA    = new CatearArmor("magenta", CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, CATEAR_GROUP);
-    // public static final CatearArmor CATEARS_PURPLE    = new CatearArmor("purple", CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, CATEAR_GROUP);
-    // public static final CatearArmor CATEARS_RED    = new CatearArmor("red", CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, CATEAR_GROUP);
-    public static final CatearArmor CATEARS_RAINBOW    = new CatearArmor("rainbow", EquipmentSlot.HEAD, CATEAR_GROUP);
+    public static final CatearArmor CATEARS_CYAN    = new CatearArmor("cyan",       EquipmentSlot.HEAD, CATEAR_GROUP);
+    public static final CatearArmor CATEARS_MAGENTA = new CatearArmor("magenta",    EquipmentSlot.HEAD, CATEAR_GROUP);
+    public static final CatearArmor CATEARS_PURPLE  = new CatearArmor("purple",     EquipmentSlot.HEAD, CATEAR_GROUP);
+    public static final CatearArmor CATEARS_RED     = new CatearArmor("red",        EquipmentSlot.HEAD, CATEAR_GROUP);
+    public static final CatearArmor CATEARS_RAINBOW = new CatearArmor("rainbow",    EquipmentSlot.HEAD, CATEAR_GROUP);
 
     public static final AliasedBlockItem CATNIP = new CatnipItem(ModBlocks.CATNIP_BUSH, new Item.Settings().group(CatsExpandedMod.CATEAR_GROUP));
 
@@ -26,12 +26,12 @@ public class ModItems {
     public static void register(){
         CatsExpandedMod.LOGGER.info("Registering ModItems");
 
-        RegistryHelper.registerItem("catears", CATEARS);
-        // RegistryHelper.registerItem("catears_cyan", CATEARS_CYAN);
-        // RegistryHelper.registerItem("catears_magenta", CATEARS_MAGENTA);
-        // RegistryHelper.registerItem("catears_purple", CATEARS_PURPLE);
-        // RegistryHelper.registerItem("catears_red", CATEARS_RED);
-        RegistryHelper.registerItem("catears_rainbow", CATEARS_RAINBOW);
+        RegistryHelper.registerItem("catears",          CATEARS);
+        RegistryHelper.registerItem("catears_cyan",     CATEARS_CYAN);
+        RegistryHelper.registerItem("catears_magenta",  CATEARS_MAGENTA);
+        RegistryHelper.registerItem("catears_purple",   CATEARS_PURPLE);
+        RegistryHelper.registerItem("catears_red",      CATEARS_RED);
+        RegistryHelper.registerItem("catears_rainbow",  CATEARS_RAINBOW);
 
         RegistryHelper.registerItem("catnip", CATNIP);
     }

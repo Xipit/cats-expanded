@@ -77,7 +77,7 @@ public class CatearArmor extends ArmorItem{
         if(dye.equals("default")){
             return;
         }
-        tooltip.add(Text.translatable("item.catsexpanded.catears.tooltip"));
+        tooltip.add(Text.translatable("item.catsexpanded.dyed.tooltip"));
     }
     
 }
