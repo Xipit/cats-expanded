@@ -5,6 +5,7 @@ on: [ pull_request, workflow_dispatch ]
 
 env:
   MINECRAFT_VERSION: 1.19.0
+  MINECRAFT_VERSION_SHORT: 1.19
   JAVA_VERSION: 17
   VERSION: 1.2.1+1.19.0
   RELEASE_NAME: Cats Expanded 1.2.1 for Minecraft 1.19.0
@@ -60,7 +61,7 @@ jobs:
           changelog-file: CHANGELOG.md
 
           loaders: fabric
-          game-versions: "${{env.MINECRAFT_VERSION}}"
+          game-versions: "${{env.MINECRAFT_VERSION_SHORT}}"
           java: "${{env.JAVA_VERSION}}"
 
           retry-attempts: 2
