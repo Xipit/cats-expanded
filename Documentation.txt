@@ -20,6 +20,7 @@ Features:
 - catnip can be given to creepers and they will flee (will also flee from walking on ripe catnip bushes, else they will be slowed more)
 - catnip works with composters
 - catnip can be used to craft pink dye
+- dyed catears
 
 Ideas:
 - catnip essence (catnip x9)
@@ -46,4 +47,4 @@ Issues:
 
 
 Dependencies:
-- MidnightLib (for config, test if i can implement ModMenu or if it will crash when it isnt there)
+- MidnightLib
