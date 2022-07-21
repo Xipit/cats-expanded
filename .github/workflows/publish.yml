@@ -47,7 +47,7 @@ jobs:
           modrinth-id: FIzl2Jhk
           modrinth-featured: true
           modrinth-unfeature-mode: subset
-          modrinth-token: "${{env.$MODRINTH_TOKEN}}"
+          modrinth-token: "${{env.MODRINTH_TOKEN}}"
 
           curseforge-id: 576251
           curseforge-token: "${{env.CURSEFORGE_TOKEN}}"
