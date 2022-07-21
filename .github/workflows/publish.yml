@@ -42,7 +42,7 @@ jobs:
         run: ./gradlew clean build
 
       - name: Publish (CurseForge/Modrinth)
-        uses: Kir-Antipov/mc-publish@v3.1
+        uses: Kir-Antipov/mc-publish@v2.1
         with:
           modrinth-id: FIzl2Jhk
           modrinth-featured: true
