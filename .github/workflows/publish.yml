@@ -35,6 +35,10 @@ jobs:
                 
                 with:
                     submodules : true
+                    
+                    
+            -   name : Move To Source Folder
+                run : cd Source
 
 
             -   name : Setup Java
@@ -67,7 +71,7 @@ jobs:
 
                     files-primary: build/libs/!(*-@(dev|sources)).jar
 
-                    changelog-file : CHANGELOG.md
+                    changelog-file : ../Documentation/CHANGELOG.md
                     version-type : release
                     version : "${{env.VERSION}}"
                     name : "${{env.RELEASE_NAME}}"
@@ -91,7 +95,7 @@ jobs:
                     files-secondary : build/libs/*-@(dev|sources).jar
                     files-primary : build/libs/!(*-@(dev|sources)).jar
 
-                    changelog-file : CHANGELOG.md
+                    changelog-file : ../Documentation/CHANGELOG.md
                     version-type : release
                     version : "${{env.VERSION}}"
                     name : "${{env.RELEASE_NAME}}"
