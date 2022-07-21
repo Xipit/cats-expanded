@@ -50,7 +50,7 @@ jobs:
           modrinth-token: $MODRINTH_TOKEN
 
           curseforge-id: 576251
-          curseforge-token: $CURSEFORGE_TOKEN
+          curseforge-token: ${{ secrets.PUBLISH_CURSEFORGE_TOKEN }}
 
           files-primary: build/libs/!(*-@(dev|sources)).jar
 
