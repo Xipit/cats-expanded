@@ -22,8 +22,8 @@ import net.minecraft.world.spawner.Spawner;
 import xipit.cats.expanded.CatsExpandedMod;
 
 @Mixin(CatSpawner.class)
-public abstract class ModCatSpawnerMixin 
-implements Spawner{
+public abstract class ModCatSpawnerMixin
+        implements Spawner {
     protected final int MAX_CATS_IN_AREA = 5;
 
     // needs to be monitored to make sure it stays the same
@@ -38,13 +38,13 @@ implements Spawner{
         world.spawnEntityAndPassengers(catEntity);
         return 1;
     }
-    
+
 
     // Tail -> last return statement
     @Inject(method = "spawn", at = @At("TAIL"), cancellable = true)
-    protected void InjectSpawn(ServerWorld world, boolean arg1, boolean spawnAnimals, CallbackInfoReturnable<Integer> cir){
+    protected void InjectSpawn(ServerWorld world, boolean arg1, boolean spawnAnimals, CallbackInfoReturnable<Integer> cir) {
         // check configs
-        if(!CatsExpandedMod.CONFIG.isExtraCatSpawning()){
+        if (!CatsExpandedMod.CONFIG.isExtraCatSpawning()) {
             cir.setReturnValue(0);
         }
 
@@ -62,7 +62,7 @@ implements Spawner{
     }
 
 
-    private int spawnInWild(ServerWorld world, BlockPos pos){
+    private int spawnInWild(ServerWorld world, BlockPos pos) {
         int i = 48;
         if ((world.getNonSpectatingEntities(CatEntity.class, new Box(pos).expand(i, 8.0, i))).size() < MAX_CATS_IN_AREA) {
             return this.spawn(pos, world);

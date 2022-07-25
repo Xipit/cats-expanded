@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "catsexpanded",
   "version": "1.2.1+1.19.0",
-
   "name": "Cats Expanded",
   "description": "Adds more cat stuff to Minecraft!",
   "authors": [
@@ -14,10 +13,8 @@
     "sources": "https://github.com/Xipit/cats-expanded",
     "issues": "https://github.com/Xipit/cats-expanded/issues"
   },
-
   "license": "MIT",
   "icon": "assets/catsexpanded/icon.png",
-
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -30,7 +27,6 @@
   "mixins": [
     "catsexpanded.mixins.json"
   ],
-
   "depends": {
     "fabricloader": ">=0.14.6",
     "fabric": "*",

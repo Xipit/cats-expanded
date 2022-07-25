@@ -7,7 +7,7 @@ import net.minecraft.entity.passive.BeeEntity;
 
 @Mixin(BeeEntity.class)
 public interface BeeEntityInvoker {
-    
+
     @Invoker("addCropCounter")
     void invokeAddCropCounter();
 }

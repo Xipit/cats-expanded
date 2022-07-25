@@ -13,7 +13,7 @@ import xipit.cats.expanded.item.armor.CatearArmorModel;
 public class ModelHandler {
     public static final EntityModelLayer CATEAR = RegistryHelper.model(("catear_armor"));
 
-    public static void init(BiConsumer<EntityModelLayer, TexturedModelData> consumer){
+    public static void init(BiConsumer<EntityModelLayer, TexturedModelData> consumer) {
         consumer.accept(CATEAR, TexturedModelData.of(CatearArmorModel.getModelData(), 16, 16));
     }
 }

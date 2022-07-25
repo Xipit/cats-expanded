@@ -20,19 +20,19 @@ import xipit.cats.expanded.util.RegistryHelper;
 public class ModConfiguredFeatures {
 
     public static final ConfiguredFeature<RandomPatchFeatureConfig, ?> PATCH_CATNIP_BUSH = new ConfiguredFeature<>(
-        Feature.RANDOM_PATCH,
-        ConfiguredFeatures.createRandomPatchFeatureConfig(
-            Feature.SIMPLE_BLOCK, 
-            new SimpleBlockFeatureConfig(BlockStateProvider.of((BlockState)ModBlocks.CATNIP_BUSH.getDefaultState().with(CatnipBushBlock.AGE, 3))), 
-            List.of(Blocks.GRASS_BLOCK)
-        )
+            Feature.RANDOM_PATCH,
+            ConfiguredFeatures.createRandomPatchFeatureConfig(
+                    Feature.SIMPLE_BLOCK,
+                    new SimpleBlockFeatureConfig(BlockStateProvider.of((BlockState) ModBlocks.CATNIP_BUSH.getDefaultState().with(CatnipBushBlock.AGE, 3))),
+                    List.of(Blocks.GRASS_BLOCK)
+            )
     );
 
-    public static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> registerConfiguredFeature(String name, ConfiguredFeature<FC, ?> configuredFeature){
+    public static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> registerConfiguredFeature(String name, ConfiguredFeature<FC, ?> configuredFeature) {
         return Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, RegistryHelper.id(name), configuredFeature);
     }
 
-    public static void register(){
+    public static void register() {
         registerConfiguredFeature("patch_catnip_bush", PATCH_CATNIP_BUSH);
     }
 }

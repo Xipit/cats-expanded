@@ -10,7 +10,7 @@ import xipit.cats.expanded.world.feature.newUpdate.CatnipBushPlacedFeature;
 // configure where it is placed
 public class ModCatnipGeneration {
 
-    public static void generateCatnip(){
-        BiomeModifications.addFeature(BiomeSelectors.categories((Biome.Category.PLAINS),(Biome.Category.FOREST)), GenerationStep.Feature.VEGETAL_DECORATION, CatnipBushPlacedFeature.PATCH_CATNIP_PLACED_KEY);
+    public static void generateCatnip() {
+        BiomeModifications.addFeature(BiomeSelectors.categories((Biome.Category.PLAINS), (Biome.Category.FOREST)), GenerationStep.Feature.VEGETAL_DECORATION, CatnipBushPlacedFeature.PATCH_CATNIP_PLACED_KEY);
     }
 }
