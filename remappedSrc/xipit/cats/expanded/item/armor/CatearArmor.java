@@ -1,4 +1,3 @@
-
 package xipit.cats.expanded.item.armor;
 
 import java.util.List;
@@ -28,7 +27,7 @@ import xipit.cats.expanded.util.RegistryHelper;
  *    base of code is sourced from @Noaaan from https://github.com/Noaaan/MythicMetals
  */
 
-public class CatearArmor extends ArmorItem{
+public class CatearArmor extends ArmorItem {
 
     @Environment(EnvType.CLIENT)
     private BipedEntityModel<LivingEntity> model;
@@ -64,8 +63,8 @@ public class CatearArmor extends ArmorItem{
     }
 
     @Override
-    public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext){
+    public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
         tooltip.add(new TranslatableText("item.catsexpanded.catears.tooltip"));
     }
-    
+
 }

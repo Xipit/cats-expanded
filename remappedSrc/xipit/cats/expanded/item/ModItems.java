@@ -16,8 +16,8 @@ public class ModItems {
     public static final CatearArmor CATEARS = new CatearArmor(CATEAR_ARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().group(CatsExpandedMod.CATEAR_GROUP));
     public static final AliasedBlockItem CATNIP = new CatnipItem(ModBlocks.CATNIP_BUSH, new Item.Settings().group(CatsExpandedMod.CATEAR_GROUP));
 
-   
-    public static void register(){
+
+    public static void register() {
         CatsExpandedMod.LOGGER.info("Registering ModItems");
 
         RegistryHelper.registerItem("catears", CATEARS);

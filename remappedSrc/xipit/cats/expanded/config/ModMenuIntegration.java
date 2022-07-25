@@ -7,11 +7,11 @@ import me.lortseam.completeconfig.gui.ConfigScreenBuilder;
 import me.lortseam.completeconfig.gui.cloth.ClothConfigScreenBuilder;
 import xipit.cats.expanded.CatsExpandedMod;
 
-public class ModMenuIntegration implements ModMenuApi{
+public class ModMenuIntegration implements ModMenuApi {
     ConfigScreenBuilder screenBuilder = new ClothConfigScreenBuilder();
 
     @Override
-    public ConfigScreenFactory<?> getModConfigScreenFactory(){
+    public ConfigScreenFactory<?> getModConfigScreenFactory() {
         return parent -> screenBuilder.build(parent, CatsExpandedMod.CONFIG);
     }
 }

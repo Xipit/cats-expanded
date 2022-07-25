@@ -1,6 +1,6 @@
 {
-    "parent": "minecraft:item/generated",
-    "textures": {
-        "layer0": "catsexpanded:item/catears_rainbow"
-    }
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "catsexpanded:item/catears_rainbow"
+  }
 }

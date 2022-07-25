@@ -1,11 +1,6 @@
 package xipit.cats.expanded.block;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Fertilizable;
-import net.minecraft.block.PlantBlock;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -33,8 +28,8 @@ import xipit.cats.expanded.item.ModItems;
 import xipit.cats.expanded.util.ModCreeperEntityMixinInterface;
 
 public class CatnipBushBlock
-extends PlantBlock
-implements Fertilizable {
+        extends PlantBlock
+        implements Fertilizable {
     public static final int MAX_AGE = 3;
     public static final IntProperty AGE = Properties.AGE_3;
     private static final VoxelShape SMALL_SHAPE = Block.createCuboidShape(3.0, 0.0, 3.0, 13.0, 8.0, 13.0);
@@ -67,7 +62,7 @@ implements Fertilizable {
     }
 
     @Override
-    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random)  {
+    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         int i = state.get(AGE);
         if (i < 3 && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
             BlockState blockState = state.with(AGE, i + 1);
@@ -84,9 +79,9 @@ implements Fertilizable {
             return;
         }
 
-        if(entityType == EntityType.CREEPER){
-            if(state.get(AGE) >= 2 && !((ModCreeperEntityMixinInterface)entity).getCatsExpandedIsCatnipEscaping()){
-                ((ModCreeperEntityMixinInterface)entity).setCatsExpandedIsCatnipEscaping(true);
+        if (entityType == EntityType.CREEPER) {
+            if (state.get(AGE) >= 2 && !((ModCreeperEntityMixinInterface) entity).getCatsExpandedIsCatnipEscaping()) {
+                ((ModCreeperEntityMixinInterface) entity).setCatsExpandedIsCatnipEscaping(true);
             }
 
             entity.slowMovement(state, new Vec3d(0.6f, 1f, 0.6f));
@@ -111,7 +106,7 @@ implements Fertilizable {
 
             world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0f, 0.8f + world.random.nextFloat() * 0.4f);
             world.setBlockState(pos, state.with(AGE, 1), Block.NOTIFY_LISTENERS);
-            
+
             return ActionResult.success(world.isClient);
         }
         return ActionResult.PASS;

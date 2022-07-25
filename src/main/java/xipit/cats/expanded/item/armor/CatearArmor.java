@@ -1,10 +1,4 @@
-
 package xipit.cats.expanded.item.armor;
-
-import java.util.List;
-
-import net.minecraft.util.Formatting;
-import org.jetbrains.annotations.NotNull;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -18,14 +12,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import xipit.cats.expanded.util.ModelHandler;
 import xipit.cats.expanded.util.RegistryHelper;
+
+import java.util.List;
 
 /*
  *    base of code is sourced from @Noaaan from https://github.com/Noaaan/MythicMetals
  */
 
-public class CatearArmor extends ArmorItem{
+public class CatearArmor extends ArmorItem {
 
     @Environment(EnvType.CLIENT)
     private BipedEntityModel<LivingEntity> model;
@@ -60,7 +57,7 @@ public class CatearArmor extends ArmorItem{
 
     @NotNull
     public Identifier getArmorTexture(ItemStack stack, EquipmentSlot slot) {
-        if(slot != EquipmentSlot.HEAD){
+        if (slot != EquipmentSlot.HEAD) {
             return RegistryHelper.id("");
         }
         return RegistryHelper.id(String.format("textures/models/catear_model_%s.png", dye));
@@ -73,11 +70,11 @@ public class CatearArmor extends ArmorItem{
     }
 
     @Override
-    public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext){
-        if(dye.equals("default")){
+    public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
+        if (dye.equals("default")) {
             return;
         }
         tooltip.add(Text.translatable("item.catsexpanded.dyed.tooltip"));
     }
-    
+
 }

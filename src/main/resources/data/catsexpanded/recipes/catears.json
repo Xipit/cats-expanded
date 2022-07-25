@@ -1,22 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
   "group": "catears",
-    "pattern": [
-      "F F",
-      "FLF",
-      "L L"
-    ],
-    "key": {
-      "F": {
-        "item": "minecraft:feather"
-      },
-      "L": {
-        "item": "minecraft:leather"
-      }
+  "pattern": [
+    "F F",
+    "FLF",
+    "L L"
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:feather"
     },
-    "result": {
-      "item": "catsexpanded:catears",
-      "count": 1
+    "L": {
+      "item": "minecraft:leather"
     }
+  },
+  "result": {
+    "item": "catsexpanded:catears",
+    "count": 1
   }
+}
 

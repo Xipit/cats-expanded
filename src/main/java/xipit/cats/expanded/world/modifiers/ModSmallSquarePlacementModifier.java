@@ -1,13 +1,13 @@
 package xipit.cats.expanded.world.modifiers;
 
-import java.util.stream.Stream;
-
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.gen.feature.FeaturePlacementContext;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
-public class ModSmallSquarePlacementModifier extends SquarePlacementModifier{
+import java.util.stream.Stream;
+
+public class ModSmallSquarePlacementModifier extends SquarePlacementModifier {
     // a smaller SquarePlacementModifier
     // only 8 blocks max. from center, instead of 16
 

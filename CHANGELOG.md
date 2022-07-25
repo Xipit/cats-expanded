@@ -1,6 +1,6 @@
 - adds 4 new catear variants
-  - cyan
-  - magenta
-  - purple
-  - red
+    - cyan
+    - magenta
+    - purple
+    - red
 - fixes incorrect and/or missing tooltips

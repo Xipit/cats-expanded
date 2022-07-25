@@ -16,14 +16,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Environment(EnvType.CLIENT)
 @Mixin(TitleScreen.class)
 public abstract class ModTitleScreenMixin {
-	Random rand = new Random();
+    Random rand = new Random();
 
-	@Inject(at = @At("HEAD"), method = "init()V")
-	private void init(CallbackInfo info) {
-		
-		int index = rand.nextInt(CatsExpandedClient.CATFACTS.length);
+    @Inject(at = @At("HEAD"), method = "init()V")
+    private void init(CallbackInfo info) {
 
-		CatsExpandedMod.LOGGER.info("Random Catfact: " + CatsExpandedClient.CATFACTS[index]);
-	}
+        int index = rand.nextInt(CatsExpandedClient.CATFACTS.length);
+
+        CatsExpandedMod.LOGGER.info("Random Catfact: " + CatsExpandedClient.CATFACTS[index]);
+    }
 }
 

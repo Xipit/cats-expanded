@@ -21,40 +21,40 @@ import xipit.cats.expanded.mixin.AccessorEntityModelLayers;
  *  inspired by (and partly sourced): @Noaaan from https://github.com/Noaaan/MythicMetals
  */
 public class RegistryHelper {
-    public static Identifier id(String name){
+    public static Identifier id(String name) {
         return new Identifier(CatsExpandedMod.MOD_ID, name);
     }
 
-    public static Item registerItem(String name, Item item){
+    public static Item registerItem(String name, Item item) {
         if (item instanceof BlockItem) {
-            ((BlockItem)item).appendBlocks(Item.BLOCK_ITEMS, item);
+            ((BlockItem) item).appendBlocks(Item.BLOCK_ITEMS, item);
         }
         return Registry.register(Registry.ITEM, id(name), item);
     }
 
-    public static PlacedFeature registerPlacedFeature(String name, PlacedFeature placedFeature){
+    public static PlacedFeature registerPlacedFeature(String name, PlacedFeature placedFeature) {
         return Registry.register(BuiltinRegistries.PLACED_FEATURE, id(name), placedFeature);
     }
 
-    public static RegistryKey<PlacedFeature> registerPlacedFeatureKey(String name){
+    public static RegistryKey<PlacedFeature> registerPlacedFeatureKey(String name) {
         return RegistryKey.of(Registry.PLACED_FEATURE_KEY, id(name));
     }
 
     // register custom mod block 
-    public static Block registerBlock(String name, Block block){
+    public static Block registerBlock(String name, Block block) {
         return Registry.register(Registry.BLOCK, id(name), block);
     }
 
     // register custom mod block with item
-    public static Block registerBlockWithItem(String name, Block block){
+    public static Block registerBlockWithItem(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registry.BLOCK, id(name), block);
     }
 
     // register accompanied item for one block
-    public static Item registerBlockItem(String name, Block block){
-        return Registry.register(Registry.ITEM, id(name), 
-            new BlockItem(block, new FabricItemSettings().group(CatsExpandedMod.CATEAR_GROUP)));
+    public static Item registerBlockItem(String name, Block block) {
+        return Registry.register(Registry.ITEM, id(name),
+                new BlockItem(block, new FabricItemSettings().group(CatsExpandedMod.CATEAR_GROUP)));
     }
 
     public static EntityModelLayer model(String name) {
@@ -67,12 +67,12 @@ public class RegistryHelper {
         return result;
     }
 
-    public static Stat<Identifier> registerStatistic(Identifier id){
+    public static Stat<Identifier> registerStatistic(Identifier id) {
         Registry.register(Registry.CUSTOM_STAT, id.getPath(), id);
         return Stats.CUSTOM.getOrCreateStat(id, StatFormatter.DEFAULT);
     }
-    
-    public static Stat<Identifier> registerStatistic(Identifier id, StatFormatter formatter){
+
+    public static Stat<Identifier> registerStatistic(Identifier id, StatFormatter formatter) {
         Registry.register(Registry.CUSTOM_STAT, id.getPath(), id);
         return Stats.CUSTOM.getOrCreateStat(id, formatter);
     }
