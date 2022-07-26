@@ -2,6 +2,12 @@
 
 Cats Expanded is a fabric mod for minecraft that, well, expands on all things :cat:
 
+## 🐱‍💻 - Downloads
+
+- [Modrinth](https://modrinth.com/mod/cats-expanded)
+- [Curseforge](https://www.curseforge.com/minecraft/mc-mods/cats-expanded)
+- [Github](https://github.com/Xipit/cats-expanded/releases)
+
 ## 😸 - Features
 
 - adds new catnip-bush block, including world generation, interaction with cats/ocelots, etc.
