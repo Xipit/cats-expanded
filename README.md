@@ -17,9 +17,7 @@ Cats Expanded is a fabric mod for minecraft that, well, expands on all things :c
 
 ## :octocat: - Dependencies
 
-- [CompleteConig](https://github.com/noahvogt/CompleteConfig) -> configuration
-- [Modmenu](https://github.com/TerraformersMC/ModMenu) -> easy access to configuration
-- [ClothConfig API](https://shedaniel.gitbook.io/cloth-config/) -> displaying configuration
+- [MidnightLib](https://github.com/TeamMidnightDust/MidnightLib) -> configuration
 
 ## 😽 - Credits
 
