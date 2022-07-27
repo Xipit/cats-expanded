@@ -1,11 +1,6 @@
 package xipit.cats.expanded.block;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Fertilizable;
-import net.minecraft.block.PlantBlock;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -30,6 +25,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import xipit.cats.expanded.item.ModItems;
+import xipit.cats.expanded.util.ModCreeperEntityMixinInterface;
 
 public class CatnipBushBlock
         extends PlantBlock
@@ -41,7 +37,7 @@ public class CatnipBushBlock
 
     public CatnipBushBlock(AbstractBlock.Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState) ((BlockState) this.stateManager.getDefaultState()).with(AGE, 0));
+        this.setDefaultState((this.stateManager.getDefaultState()).with(AGE, 0));
     }
 
     @Override
@@ -77,9 +73,21 @@ public class CatnipBushBlock
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!(entity instanceof LivingEntity) || entity.getType() == EntityType.FOX || entity.getType() == EntityType.BEE || entity.getType() == EntityType.CAT || entity.getType() == EntityType.OCELOT) {
+        final EntityType<?> entityType = entity.getType();
+
+        if (!(entity instanceof LivingEntity) || entityType == EntityType.FOX || entityType == EntityType.BEE || entityType == EntityType.CAT || entityType == EntityType.OCELOT) {
             return;
         }
+
+        if (entityType == EntityType.CREEPER) {
+            if (state.get(AGE) >= 2 && !((ModCreeperEntityMixinInterface) entity).getCatsExpandedIsCatnipEscaping()) {
+                ((ModCreeperEntityMixinInterface) entity).setCatsExpandedIsCatnipEscaping(true);
+            }
+
+            entity.slowMovement(state, new Vec3d(0.6f, 1f, 0.6f));
+            return;
+        }
+
         // unwanted behaviour: cant jump (like in spider webs)
         entity.slowMovement(state, new Vec3d(0.95f, 1f, 0.95f));
     }
@@ -97,7 +105,7 @@ public class CatnipBushBlock
             CatnipBushBlock.dropStack(world, pos, new ItemStack(ModItems.CATNIP, j + (ageIs3 ? 1 : 0)));
 
             world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0f, 0.8f + world.random.nextFloat() * 0.4f);
-            world.setBlockState(pos, (BlockState) state.with(AGE, 1), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos, state.with(AGE, 1), Block.NOTIFY_LISTENERS);
 
             return ActionResult.success(world.isClient);
         }
@@ -122,7 +130,7 @@ public class CatnipBushBlock
     @Override
     public void grow(ServerWorld world, net.minecraft.util.math.random.Random random, BlockPos pos, BlockState state) {
         int i = Math.min(3, state.get(AGE) + 1);
-        world.setBlockState(pos, (BlockState) state.with(AGE, i), Block.NOTIFY_LISTENERS);
+        world.setBlockState(pos, state.with(AGE, i), Block.NOTIFY_LISTENERS);
     }
 }
 
