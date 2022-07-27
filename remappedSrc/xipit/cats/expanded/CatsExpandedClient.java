@@ -48,7 +48,10 @@ public class CatsExpandedClient implements ClientModInitializer {
     public void onInitializeClient() {
         CatsExpandedMod.LOGGER.info("Registering client side custom rendering");
 
+        // enables transparency
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CATNIP_BUSH, RenderLayer.getCutout());
+
+        // enables custom 3D Model 
         ModelHandler.init((loc, def) -> EntityModelLayerRegistry.registerModelLayer(loc, () -> def));
         registerArmorRenderer();
     }

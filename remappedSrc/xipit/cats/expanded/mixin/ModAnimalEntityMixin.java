@@ -1,8 +1,7 @@
 package xipit.cats.expanded.mixin;
 
-import org.spongepowered.asm.mixin.Mixin;
-
 import net.minecraft.entity.passive.AnimalEntity;
+import org.spongepowered.asm.mixin.Mixin;
 import xipit.cats.expanded.util.ModAnimalEntityMixinInterface;
 
 @Mixin(value = AnimalEntity.class)

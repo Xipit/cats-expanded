@@ -3,15 +3,14 @@ package xipit.cats.expanded.mixin;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.TitleScreen;
-import xipit.cats.expanded.CatsExpandedClient;
-import xipit.cats.expanded.CatsExpandedMod;
-
-import java.util.Random;
-
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import xipit.cats.expanded.CatsExpandedClient;
+import xipit.cats.expanded.CatsExpandedMod;
+
+import java.util.Random;
 
 @Environment(EnvType.CLIENT)
 @Mixin(TitleScreen.class)

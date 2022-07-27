@@ -1,14 +1,12 @@
 package xipit.cats.expanded.goal;
 
-import java.util.Random;
-
-import org.jetbrains.annotations.Nullable;
-
 import net.minecraft.entity.ai.FuzzyTargeting;
 import net.minecraft.entity.ai.goal.WanderAroundGoal;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.random.Random;
+import org.jetbrains.annotations.Nullable;
 import xipit.cats.expanded.util.ModAnimalEntityMixinInterface;
 
 public class ModDruggedBehaviourGoal
@@ -16,7 +14,6 @@ public class ModDruggedBehaviourGoal
     public static final float CHANCE = 0.001f;
     protected static final double speed = 1.75;
     protected final float probability;
-    protected final Random random = new Random();
 
 
     public ModDruggedBehaviourGoal(PathAwareEntity mob, float probability) {
@@ -59,9 +56,9 @@ public class ModDruggedBehaviourGoal
     public void tick() {
         ((ModAnimalEntityMixinInterface) mob).decreaseCatsExpandedCatnipHighDuration(2);
 
-        int randomInt = random.nextInt(6);
+        Random random = Random.create();
 
-        switch (randomInt) {
+        switch (random.nextInt()) {
             case 0:
                 mob.playSound(SoundEvents.ENTITY_CAT_PURREOW, 0.4f + 0.4f * (random.nextFloat() - random.nextFloat()), 1f);
                 break;

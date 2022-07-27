@@ -1,6 +1,2 @@
-- adds 4 new catear variants
-    - cyan
-    - magenta
-    - purple
-    - red
-- fixes incorrect and/or missing tooltips
+- update to 1.19.1
+- no functional changes

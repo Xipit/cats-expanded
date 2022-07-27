@@ -1,7 +1,5 @@
 package xipit.cats.expanded.world.feature;
 
-import java.util.List;
-
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
@@ -11,6 +9,8 @@ import net.minecraft.world.gen.placementmodifier.BiomePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
 import xipit.cats.expanded.util.RegistryHelper;
 import xipit.cats.expanded.world.modifiers.ModSmallSquarePlacementModifier;
+
+import java.util.List;
 
 
 public class ModPlacedFeatures {
