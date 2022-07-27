@@ -11,6 +11,7 @@ public class ModBlocks {
     public static final CatnipBushBlock CATNIP_BUSH
             = new CatnipBushBlock(AbstractBlock.Settings.of(Material.PLANT).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).nonOpaque());
 
+    public static final LuckyCatBlock LUCKYCAT = new LuckyCatBlock(AbstractBlock.Settings.of(Material.METAL));
 
     // function called on mod initalization
     public static void register() {
