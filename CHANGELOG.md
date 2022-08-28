@@ -1,2 +1,2 @@
-- update to 1.19.1
+- update to 1.19.2
 - no functional changes
