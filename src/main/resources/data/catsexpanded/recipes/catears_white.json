@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "catears",
+  "ingredients": [
+    {
+      "item": "catsexpanded:catears"
+    },
+    {
+      "item": "minecraft:white_dye"
+    }
+  ],
+  "result": {
+    "item": "catsexpanded:catears_white",
+    "count": 1
+  }
+}

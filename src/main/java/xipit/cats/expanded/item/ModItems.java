@@ -18,7 +18,12 @@ public class ModItems {
     public static final CatearArmor CATEARS_MAGENTA = new CatearArmor("magenta", EquipmentSlot.HEAD, CATEAR_GROUP);
     public static final CatearArmor CATEARS_PURPLE = new CatearArmor("purple", EquipmentSlot.HEAD, CATEAR_GROUP);
     public static final CatearArmor CATEARS_RED = new CatearArmor("red", EquipmentSlot.HEAD, CATEAR_GROUP);
+
+    public static final CatearArmor CATEARS_WHITE = new CatearArmor("white", EquipmentSlot.HEAD, CATEAR_GROUP);
+    public static final CatearArmor CATEARS_BLACK = new CatearArmor("black", EquipmentSlot.HEAD, CATEAR_GROUP);
+    public static final CatearArmor CATEARS_BLUE = new CatearArmor("blue", EquipmentSlot.HEAD, CATEAR_GROUP);
     public static final CatearArmor CATEARS_RAINBOW = new CatearArmor("rainbow", EquipmentSlot.HEAD, CATEAR_GROUP);
+
 
     public static final AliasedBlockItem CATNIP = new CatnipItem(ModBlocks.CATNIP_BUSH, new Item.Settings().group(CatsExpandedMod.CATEAR_GROUP));
 
@@ -31,6 +36,9 @@ public class ModItems {
         RegistryHelper.registerItem("catears_magenta", CATEARS_MAGENTA);
         RegistryHelper.registerItem("catears_purple", CATEARS_PURPLE);
         RegistryHelper.registerItem("catears_red", CATEARS_RED);
+        RegistryHelper.registerItem("catears_white", CATEARS_WHITE);
+        RegistryHelper.registerItem("catears_black", CATEARS_BLACK);
+        RegistryHelper.registerItem("catears_blue", CATEARS_BLUE);
         RegistryHelper.registerItem("catears_rainbow", CATEARS_RAINBOW);
 
         RegistryHelper.registerItem("catnip", CATNIP);
