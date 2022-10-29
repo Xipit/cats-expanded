@@ -3,7 +3,7 @@
   "group": "catears",
   "ingredients": [
     {
-      "item": "catsexpanded:catears"
+      "tag": "catsexpanded:all-catears"
     },
     {
       "item": "minecraft:purple_dye"

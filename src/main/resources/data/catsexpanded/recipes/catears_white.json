@@ -3,10 +3,10 @@
   "group": "catears",
   "ingredients": [
     {
-      "item": "catsexpanded:catears"
+      "tag": "catsexpanded:all-catears"
     },
     {
-      "item": "minecraft:white_dye"
+      "tag": "catsexpanded:whiteish_dyes"
     }
   ],
   "result": {

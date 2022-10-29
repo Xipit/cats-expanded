@@ -6,11 +6,11 @@
       "tag": "catsexpanded:all-catears"
     },
     {
-      "tag": "catsexpanded:blueish_dyes"
+      "item": "minecraft:green_dye"
     }
   ],
   "result": {
-    "item": "catsexpanded:catears_blue",
+    "item": "catsexpanded:catears_green",
     "count": 1
   }
 }

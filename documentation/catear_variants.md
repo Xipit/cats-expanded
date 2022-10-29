@@ -3,17 +3,20 @@ Catear Variants
 
 - > *Black*
 - *Red*
-- > Green
+- > *Green*
 - > *Brown* -> default
 - > *Blue*
 - *Purple*
 - *Cyan*
-- Light gray
-- Gray
+- *Light gray*
+- *Gray*
 - *Pink*
-- Lime
-- > Yellow
-- Light Blue
+- *Lime*
+- > *Yellow*
+- *Light Blue*
 - *Magenta*
-- Orange
+- *Orange*
 - > *White*
+- pink
+
+# Adjust Recipes to take in any catear variant for coloring and add default (brown recipe)
