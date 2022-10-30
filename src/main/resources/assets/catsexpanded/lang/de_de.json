@@ -10,5 +10,9 @@
   "catsexpanded.midnightconfig.enableExtraCatSpawning": "Erlaube Katzen außerhalb von Dörfern zu spawnen",
   "catsexpanded.midnightconfig.title": "Cats Expanded Konfiguration",
   "modmenu.descriptionTranslation.catsexpanded": "Fügt Katzenohren und Katzenminze hinzu. Probiere Katzenminze an Katzen & Ozelots oder Creeper aus!",
-  "modmenu.summaryTranslation.catsexpanded": "Erweitert das Gameplay rund um Katzen"
+  "modmenu.summaryTranslation.catsexpanded": "Erweitert das Gameplay rund um Katzen",
+  "block.catsexpanded.carved_cat_pumpkin": "Geschnitzter Katzenkürbis",
+  "item.catsexpanded.carved_cat_pumpkin": "Geschnitzter Katzenkürbis",
+  "block.catsexpanded.cat_o_lantern": "Katzenkürbislaterne",
+  "item.catsexpanded.cat_o_lantern": "Katzenkürbislaterne"
 }

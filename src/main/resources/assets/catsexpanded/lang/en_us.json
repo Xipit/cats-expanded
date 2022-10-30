@@ -10,5 +10,9 @@
   "catsexpanded.midnightconfig.enableExtraCatSpawning": "Allow cats to spawn outside of villages",
   "catsexpanded.midnightconfig.title": "Cats Expanded Configuration",
   "modmenu.descriptionTranslation.catsexpanded": "Adds catears and catnip. Try giving cats & ocelots or creepers some catnip!",
-  "modmenu.summaryTranslation.catsexpanded": "Erweitert das Gameplay rund um Katzen"
+  "modmenu.summaryTranslation.catsexpanded": "Erweitert das Gameplay rund um Katzen",
+  "block.catsexpanded.carved_cat_pumpkin": "Carved Cat Pumpkin",
+  "item.catsexpanded.carved_cat_pumpkin": "Carved Cat Pumpkin",
+  "block.catsexpanded.cat_o_lantern": "Cat o'Lantern",
+  "item.catsexpanded.cat_o_lantern": "Cat o'Lantern"
 }

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "catears",
+  "pattern": [
+    "CCC",
+    "CPC",
+    "CCC"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:pumpkin"
+    },
+    "C": {
+      "item": "catsexpanded:catnip"
+    }
+  },
+  "result": {
+    "item": "catsexpanded:carved_cat_pumpkin",
+    "count": 1
+  }
+}
+
