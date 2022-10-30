@@ -1,12 +1,6 @@
 package xipit.cats.expanded.block;
 
-import java.util.Random;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Fertilizable;
-import net.minecraft.block.PlantBlock;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -30,6 +24,8 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import xipit.cats.expanded.item.ModItems;
 import xipit.cats.expanded.util.ModCreeperEntityMixinInterface;
+
+import java.util.Random;
 
 public class CatnipBushBlock
 extends PlantBlock
@@ -66,7 +62,7 @@ implements Fertilizable {
     }
 
     @Override
-    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random)  {
         int i = state.get(AGE);
         if (i < 3 && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
             world.setBlockState(pos, state.with(AGE, i + 1), Block.NOTIFY_LISTENERS);
@@ -104,7 +100,7 @@ implements Fertilizable {
         }
         if (age > 1) {
             int j = 1 + world.random.nextInt(1);
-            Block.dropStack(world, pos, new ItemStack(ModItems.CATNIP, j + (ageIs3 ? 1 : 0)));
+            CatnipBushBlock.dropStack(world, pos, new ItemStack(ModItems.CATNIP, j + (ageIs3 ? 1 : 0)));
 
             world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0f, 0.8f + world.random.nextFloat() * 0.4f);
             world.setBlockState(pos, state.with(AGE, 1), Block.NOTIFY_LISTENERS);

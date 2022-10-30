@@ -19,15 +19,14 @@ import xipit.cats.expanded.block.ModBlocks;
 public class CatnipBushConfiguredFeature {
 
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> PATCH_CATNIP_BUSH = ConfiguredFeatures.register(
-        "patch_catnip_bush", 
-            Feature.RANDOM_PATCH, 
-                ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK, 
-                    new SimpleBlockFeatureConfig(BlockStateProvider.of((BlockState)ModBlocks.CATNIP_BUSH.getDefaultState().with(CatnipBushBlock.AGE, 3))), 
-                        List.of(Blocks.GRASS_BLOCK)));
+            "patch_catnip_bush",
+            Feature.RANDOM_PATCH,
+            ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK,
+                    new SimpleBlockFeatureConfig(BlockStateProvider.of((BlockState) ModBlocks.CATNIP_BUSH.getDefaultState().with(CatnipBushBlock.AGE, 3))),
+                    List.of(Blocks.GRASS_BLOCK)));
 
 
-
-    public static void registerConfiguredFeatures(){
+    public static void registerConfiguredFeatures() {
         CatsExpandedMod.LOGGER.info("Registering ModConfiguredFeatures for " + CatsExpandedMod.MOD_ID);
     }
 }

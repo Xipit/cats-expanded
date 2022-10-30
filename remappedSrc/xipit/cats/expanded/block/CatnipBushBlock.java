@@ -1,12 +1,6 @@
 package xipit.cats.expanded.block;
 
-import java.util.Random;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Fertilizable;
-import net.minecraft.block.PlantBlock;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -24,15 +18,18 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.event.GameEvent;
 import xipit.cats.expanded.item.ModItems;
+import xipit.cats.expanded.util.ModCreeperEntityMixinInterface;
 
 public class CatnipBushBlock
-extends PlantBlock
-implements Fertilizable {
+        extends PlantBlock
+        implements Fertilizable {
     public static final int MAX_AGE = 3;
     public static final IntProperty AGE = Properties.AGE_3;
     private static final VoxelShape SMALL_SHAPE = Block.createCuboidShape(3.0, 0.0, 3.0, 13.0, 8.0, 13.0);
@@ -40,7 +37,7 @@ implements Fertilizable {
 
     public CatnipBushBlock(AbstractBlock.Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(AGE, 0));
+        this.setDefaultState((this.stateManager.getDefaultState()).with(AGE, 0));
     }
 
     @Override
@@ -68,15 +65,29 @@ implements Fertilizable {
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         int i = state.get(AGE);
         if (i < 3 && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
-            world.setBlockState(pos, (BlockState)state.with(AGE, i + 1), Block.NOTIFY_LISTENERS);
+            BlockState blockState = state.with(AGE, i + 1);
+            world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
+            world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(blockState));
         }
     }
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!(entity instanceof LivingEntity) || entity.getType() == EntityType.FOX || entity.getType() == EntityType.BEE || entity.getType() == EntityType.CAT || entity.getType() == EntityType.OCELOT) {
+        final EntityType<?> entityType = entity.getType();
+
+        if (!(entity instanceof LivingEntity) || entityType == EntityType.FOX || entityType == EntityType.BEE || entityType == EntityType.CAT || entityType == EntityType.OCELOT) {
             return;
         }
+
+        if (entityType == EntityType.CREEPER) {
+            if (state.get(AGE) >= 2 && !((ModCreeperEntityMixinInterface) entity).getCatsExpandedIsCatnipEscaping()) {
+                ((ModCreeperEntityMixinInterface) entity).setCatsExpandedIsCatnipEscaping(true);
+            }
+
+            entity.slowMovement(state, new Vec3d(0.6f, 1f, 0.6f));
+            return;
+        }
+
         // unwanted behaviour: cant jump (like in spider webs)
         entity.slowMovement(state, new Vec3d(0.95f, 1f, 0.95f));
     }
@@ -94,8 +105,8 @@ implements Fertilizable {
             CatnipBushBlock.dropStack(world, pos, new ItemStack(ModItems.CATNIP, j + (ageIs3 ? 1 : 0)));
 
             world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0f, 0.8f + world.random.nextFloat() * 0.4f);
-            world.setBlockState(pos, (BlockState)state.with(AGE, 1), Block.NOTIFY_LISTENERS);
-            
+            world.setBlockState(pos, state.with(AGE, 1), Block.NOTIFY_LISTENERS);
+
             return ActionResult.success(world.isClient);
         }
         return ActionResult.PASS;
@@ -112,14 +123,14 @@ implements Fertilizable {
     }
 
     @Override
-    public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
+    public boolean canGrow(World world, net.minecraft.util.math.random.Random random, BlockPos pos, BlockState state) {
         return true;
     }
 
     @Override
-    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
+    public void grow(ServerWorld world, net.minecraft.util.math.random.Random random, BlockPos pos, BlockState state) {
         int i = Math.min(3, state.get(AGE) + 1);
-        world.setBlockState(pos, (BlockState)state.with(AGE, i), Block.NOTIFY_LISTENERS);
+        world.setBlockState(pos, state.with(AGE, i), Block.NOTIFY_LISTENERS);
     }
 }
 

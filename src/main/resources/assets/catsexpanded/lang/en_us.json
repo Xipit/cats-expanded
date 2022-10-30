@@ -1,12 +1,18 @@
 {
-    "item.catsexpanded.catears": "Catears",
-    "item.catsexpanded.catnip": "Catnip",
-    "item.catsexpanded.catnip.tooltip": "can be planted or fed to cats",
-    "item.catsexpanded.dyed.tooltip": "Dyed",
-    "itemGroup.catsexpanded.general": "Cats Expanded",
-    "block.catsexpanded.catnip_bush": "Catnip bush",
-    "stat.catsexpanded.amount_of_catnip_fed_to_cats": "Catnip fed to cats",
-    "stat.catsexpanded.amount_of_catnip_scared_creepers": "Creepers scared with catnip",
-
-    "config.catsexpanded.extraCatSpawning": "extra non conditional cat-spawning"
+  "itemGroup.catsexpanded.general": "Cats Expanded",
+  "item.catsexpanded.catears": "Catears",
+  "item.catsexpanded.dyed.tooltip": "Dyed",
+  "item.catsexpanded.catnip": "Catnip",
+  "item.catsexpanded.catnip.tooltip": "can be planted or fed to cats",
+  "block.catsexpanded.catnip_bush": "Catnip bush",
+  "stat.catsexpanded.amount_of_catnip_fed_to_cats": "Catnip fed to cats",
+  "stat.catsexpanded.amount_of_catnip_scared_creepers": "Creepers scared with catnip",
+  "catsexpanded.midnightconfig.enableExtraCatSpawning": "Allow cats to spawn outside of villages",
+  "catsexpanded.midnightconfig.title": "Cats Expanded Configuration",
+  "modmenu.descriptionTranslation.catsexpanded": "Adds catears and catnip. Try giving cats & ocelots or creepers some catnip!",
+  "modmenu.summaryTranslation.catsexpanded": "Erweitert das Gameplay rund um Katzen",
+  "block.catsexpanded.carved_cat_pumpkin": "Carved Cat Pumpkin",
+  "item.catsexpanded.carved_cat_pumpkin": "Carved Cat Pumpkin",
+  "block.catsexpanded.cat_o_lantern": "Cat o'Lantern",
+  "item.catsexpanded.cat_o_lantern": "Cat o'Lantern"
 }

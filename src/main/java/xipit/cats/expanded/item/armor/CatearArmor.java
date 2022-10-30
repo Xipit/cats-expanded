@@ -1,10 +1,6 @@
 
 package xipit.cats.expanded.item.armor;
 
-import java.util.List;
-
-import org.jetbrains.annotations.NotNull;
-
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
@@ -19,8 +15,11 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import xipit.cats.expanded.util.ModelHandler;
 import xipit.cats.expanded.util.RegistryHelper;
+
+import java.util.List;
 
 /*
  *    base of code is sourced from @Noaaan from https://github.com/Noaaan/MythicMetals

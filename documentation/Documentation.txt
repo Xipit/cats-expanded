@@ -20,6 +20,7 @@ Features:
 - catnip can be given to creepers and they will flee (will also flee from walking on ripe catnip bushes, else they will be slowed more)
 - catnip works with composters
 - catnip can be used to craft pink dye
+- dyed catears
 
 Ideas:
 - catnip essence (catnip x9)
@@ -39,9 +40,12 @@ Ideas:
     - crafting recipe similar to enchanting table, but includes fish and maybe catnip
     --> non-awkward way to implement very specific cat-related items
     - needs GUI (similar to enchanting table, but right side should be similar to crafting table. Needs special effects)
+- more morning gifts (maybe after feeding them -> chances increase?)
 
 Issues:
 - [SOLVED] when cat is owned, one cant right click to feed them catnip
 
 
 
+Dependencies:
+- MidnightLib

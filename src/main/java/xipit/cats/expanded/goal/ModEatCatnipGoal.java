@@ -1,7 +1,5 @@
 package xipit.cats.expanded.goal;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.ai.goal.MoveToTargetPosGoal;
@@ -15,9 +13,8 @@ import xipit.cats.expanded.block.ModBlocks;
 import xipit.cats.expanded.util.ModAnimalEntityMixinInterface;
 
 public class ModEatCatnipGoal
-    extends MoveToTargetPosGoal {
+        extends MoveToTargetPosGoal {
 
-    protected final Random random = new Random();
     protected int timer;
 
     public ModEatCatnipGoal(AnimalEntity mob, double speed, int range, int maxYDifference) {
@@ -50,7 +47,7 @@ public class ModEatCatnipGoal
             } else {
                 ++this.timer;
             }
-        } else if (!this.hasReached() && random.nextFloat() < 0.05f) {
+        } else if (!this.hasReached() && Math.random() < 0.05f) {
             mob.playSound(SoundEvents.ENTITY_FOX_SNIFF, 1.0f, 1.0f);
         }
         super.tick();
@@ -67,17 +64,17 @@ public class ModEatCatnipGoal
     }
 
     private void devourCatnip(BlockState state) {
-        ((ModAnimalEntityMixinInterface)mob).increaseCatsExpandedCatnipHighDuration(150);
+        ((ModAnimalEntityMixinInterface) mob).increaseCatsExpandedCatnipHighDuration(150);
 
         //TODO: add custom sound
         mob.playSound(SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, 1.0f, 1.0f);
         //mob.playSound(SoundEvents.ENTITY_CAT_EAT, 1.0f, 1.0f);
-        mob.world.setBlockState(this.targetPos, (BlockState)state.with(CatnipBushBlock.AGE, 1), Block.NOTIFY_LISTENERS);
+        mob.world.setBlockState(this.targetPos, (BlockState) state.with(CatnipBushBlock.AGE, 1), Block.NOTIFY_LISTENERS);
     }
 
     @Override
     public boolean canStart() {
-        return !mob.isSleeping() && super.canStart() && random.nextInt(10) < 7;
+        return !mob.isSleeping() && super.canStart() && Math.random() <= 0.7;
     }
 
     @Override
