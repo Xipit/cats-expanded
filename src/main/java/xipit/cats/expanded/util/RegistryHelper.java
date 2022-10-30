@@ -2,16 +2,20 @@ package xipit.cats.expanded.util;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.stat.Stat;
 import net.minecraft.stat.StatFormatter;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import xipit.cats.expanded.CatsExpandedMod;
 import xipit.cats.expanded.mixin.AccessorEntityModelLayers;
@@ -75,5 +79,10 @@ public class RegistryHelper {
     public static Stat<Identifier> registerStatistic(Identifier id, StatFormatter formatter) {
         Registry.register(Registry.CUSTOM_STAT, id.getPath(), id);
         return Stats.CUSTOM.getOrCreateStat(id, formatter);
+    }
+
+    // copied from Blocks.class, since it is private there, but used for pumpkins
+    public static Boolean always(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
+        return true;
     }
 }

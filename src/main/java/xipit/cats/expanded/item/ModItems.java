@@ -22,6 +22,7 @@ public class ModItems {
     public static final CatearArmor CATEARS_ORANGE = new CatearArmor("orange", EquipmentSlot.HEAD, CATEAR_GROUP);
     public static final CatearArmor CATEARS_MAGENTA = new CatearArmor("magenta", EquipmentSlot.HEAD, CATEAR_GROUP);
     public static final CatearArmor CATEARS_PURPLE = new CatearArmor("purple", EquipmentSlot.HEAD, CATEAR_GROUP);
+    public static final CatearArmor CATEARS_PINK = new CatearArmor("pink", EquipmentSlot.HEAD, CATEAR_GROUP);
     public static final CatearArmor CATEARS_YELLOW = new CatearArmor("yellow", EquipmentSlot.HEAD, CATEAR_GROUP);
     public static final CatearArmor CATEARS_BLUE = new CatearArmor("blue", EquipmentSlot.HEAD, CATEAR_GROUP);
     public static final CatearArmor CATEARS_LIGHT_BLUE = new CatearArmor("light_blue", EquipmentSlot.HEAD, CATEAR_GROUP);
@@ -33,6 +34,8 @@ public class ModItems {
 
     public static final AliasedBlockItem CATNIP = new CatnipItem(ModBlocks.CATNIP_BUSH, new Item.Settings().group(CatsExpandedMod.CATEAR_GROUP));
 
+    public static final AliasedBlockItem CARVED_CAT_PUMPKIN = new AliasedBlockItem(ModBlocks.CARVED_CAT_PUMPKIN, new Item.Settings().group(CatsExpandedMod.CATEAR_GROUP));
+    public static final AliasedBlockItem CAT_O_LANTERN = new AliasedBlockItem(ModBlocks.CAT_O_LANTERN, new Item.Settings().group(CatsExpandedMod.CATEAR_GROUP));
 
     public static void register() {
         CatsExpandedMod.LOGGER.info("Registering ModItems");
@@ -46,6 +49,7 @@ public class ModItems {
         RegistryHelper.registerItem("catears_orange", CATEARS_ORANGE);
         RegistryHelper.registerItem("catears_magenta", CATEARS_MAGENTA);
         RegistryHelper.registerItem("catears_purple", CATEARS_PURPLE);
+        RegistryHelper.registerItem("catears_pink", CATEARS_PINK);
         RegistryHelper.registerItem("catears_yellow", CATEARS_YELLOW);
         RegistryHelper.registerItem("catears_blue", CATEARS_BLUE);
         RegistryHelper.registerItem("catears_light_blue", CATEARS_LIGHT_BLUE);
@@ -55,5 +59,9 @@ public class ModItems {
         RegistryHelper.registerItem("catears_rainbow", CATEARS_RAINBOW);
 
         RegistryHelper.registerItem("catnip", CATNIP);
+
+        RegistryHelper.registerItem("carved_cat_pumpkin", CARVED_CAT_PUMPKIN);
+        RegistryHelper.registerItem("cat_o_lantern", CAT_O_LANTERN);
+
     }
 }
