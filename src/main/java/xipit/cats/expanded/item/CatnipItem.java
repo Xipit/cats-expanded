@@ -5,6 +5,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class CatnipItem
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
-        tooltip.add(Text.translatable("item.catsexpanded.catnip.tooltip"));
+        tooltip.add(new TranslatableText("item.catsexpanded.catnip.tooltip"));
     }
 
 }

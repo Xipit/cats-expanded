@@ -1,12 +1,6 @@
 package xipit.cats.expanded.block;
 
-import java.util.Random;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Fertilizable;
-import net.minecraft.block.PlantBlock;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -30,6 +24,8 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import xipit.cats.expanded.item.ModItems;
 import xipit.cats.expanded.util.ModCreeperEntityMixinInterface;
+
+import java.util.Random;
 
 public class CatnipBushBlock
 extends PlantBlock
@@ -125,12 +121,12 @@ implements Fertilizable {
     }
 
     @Override
-    public boolean canGrow(World world, net.minecraft.util.math.random.Random random, BlockPos pos, BlockState state) {
+    public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
         return true;
     }
 
     @Override
-    public void grow(ServerWorld world, net.minecraft.util.math.random.Random random, BlockPos pos, BlockState state) {
+    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         int i = Math.min(3, state.get(AGE) + 1);
         world.setBlockState(pos, state.with(AGE, i), Block.NOTIFY_LISTENERS);
     }

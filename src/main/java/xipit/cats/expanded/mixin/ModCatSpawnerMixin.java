@@ -8,7 +8,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.SpawnHelper;
 import net.minecraft.world.spawner.CatSpawner;
 import net.minecraft.world.spawner.Spawner;
@@ -48,9 +47,9 @@ public abstract class ModCatSpawnerMixin
 
         // copied, because blockpos is needed. locals could be used, but couldnt get it to work
         ServerPlayerEntity playerEntity = world.getRandomAlivePlayer();
-        Random random = world.random;
-        int i = (8 + random.nextInt(24)) * (random.nextBoolean() ? -1 : 1);
-        int j = (8 + random.nextInt(24)) * (random.nextBoolean() ? -1 : 1);
+
+        int i = (8 + (int) (Math.random() * 24)) * (Math.random() >= 0.5 ? -1 : 1);
+        int j = (8 + (int) (Math.random() * 24)) * (Math.random() >= 0.5 ? -1 : 1);
         BlockPos blockPos = playerEntity.getBlockPos().add(i, 0, j);
 
 

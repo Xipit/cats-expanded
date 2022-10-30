@@ -5,7 +5,6 @@ import net.minecraft.entity.ai.goal.WanderAroundGoal;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.random.Random;
 import org.jetbrains.annotations.Nullable;
 import xipit.cats.expanded.util.ModAnimalEntityMixinInterface;
 
@@ -56,16 +55,10 @@ public class ModDruggedBehaviourGoal
     public void tick() {
         ((ModAnimalEntityMixinInterface) mob).decreaseCatsExpandedCatnipHighDuration(2);
 
-        Random random = Random.create();
-
-        switch (random.nextInt()) {
-            case 0:
-                mob.playSound(SoundEvents.ENTITY_CAT_PURREOW, 0.4f + 0.4f * (random.nextFloat() - random.nextFloat()), 1f);
-                break;
-
-            case 1:
-                mob.playSound(SoundEvents.ENTITY_CAT_PURR, 0.4f + 0.4f * (random.nextFloat() - random.nextFloat()), 1.1f);
-                break;
+        if (Math.random() >= 0.5) {
+            mob.playSound(SoundEvents.ENTITY_CAT_PURREOW, (float) (0.4f + 0.4f * (Math.random() - Math.random())), 1f);
+        } else {
+            mob.playSound(SoundEvents.ENTITY_CAT_PURR, (float) (0.4f + 0.4f * (Math.random() - Math.random())), 1.1f);
         }
     }
 }
