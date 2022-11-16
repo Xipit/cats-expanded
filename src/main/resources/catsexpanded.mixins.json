@@ -10,6 +10,7 @@
     "GrowCropsGoalMixin",
     "ModAnimalEntityMixin",
     "ModCatEntityMixin",
+    "ModCatEntityRendererMixin",
     "ModCatSpawnerMixin",
     "ModCreeperEntityMixin",
     "ModOcelotEntityMixin"

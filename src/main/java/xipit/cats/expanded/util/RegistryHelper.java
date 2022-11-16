@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.CatVariant;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.stat.Stat;
@@ -79,6 +80,10 @@ public class RegistryHelper {
     public static Stat<Identifier> registerStatistic(Identifier id, StatFormatter formatter) {
         Registry.register(Registry.CUSTOM_STAT, id.getPath(), id);
         return Stats.CUSTOM.getOrCreateStat(id, formatter);
+    }
+
+    public static CatVariant registerCatVariant(String name, CatVariant catVariant) {
+        return Registry.register(Registry.CAT_VARIANT, id(name), catVariant);
     }
 
     // copied from Blocks.class, since it is private there, but used for pumpkins

@@ -41,6 +41,7 @@ Ideas:
     --> non-awkward way to implement very specific cat-related items
     - needs GUI (similar to enchanting table, but right side should be similar to crafting table. Needs special effects)
 - more morning gifts (maybe after feeding them -> chances increase?)
+- easter egg where nyan cat music plays when cat is intoxicated
 
 Issues:
 - [SOLVED] when cat is owned, one cant right click to feed them catnip

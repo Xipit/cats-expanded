@@ -11,6 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import xipit.cats.expanded.block.ModBlocks;
 import xipit.cats.expanded.config.CatsExpandedConfig;
+import xipit.cats.expanded.entity.ModEntities;
 import xipit.cats.expanded.item.ModItems;
 import xipit.cats.expanded.stats.ModStats;
 import xipit.cats.expanded.world.gen.ModWorldGen;
@@ -37,6 +38,7 @@ public class CatsExpandedMod implements ModInitializer {
 
         ModItems.register();
         ModBlocks.register();
+        ModEntities.register();
         ModStats.register();
 
         ModWorldGen.register();
