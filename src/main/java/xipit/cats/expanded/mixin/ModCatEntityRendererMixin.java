@@ -14,7 +14,7 @@ import xipit.cats.expanded.entity.ModEntities;
 @Mixin(CatEntityRenderer.class)
 public class ModCatEntityRendererMixin {
 
-    @Inject(method = "getTexture", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "getTexture*", at = @At("RETURN"), cancellable = true)
     private void InjectGetTexture(CatEntity catEntity, CallbackInfoReturnable<Identifier> cir) {
         CatVariant variant = catEntity.getVariant();
 
