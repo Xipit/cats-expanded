@@ -1,23 +1,22 @@
 package xipit.cats.expanded.util;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.stat.Stat;
 import net.minecraft.stat.StatFormatter;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.gen.feature.PlacedFeature;
 import xipit.cats.expanded.CatsExpandedMod;
+import xipit.cats.expanded.item.ModItems;
 import xipit.cats.expanded.mixin.AccessorEntityModelLayers;
 
 /*
@@ -33,32 +32,25 @@ public class RegistryHelper {
         if (item instanceof BlockItem) {
             ((BlockItem) item).appendBlocks(Item.BLOCK_ITEMS, item);
         }
-        return Registry.register(Registry.ITEM, id(name), item);
+        ItemGroupEvents.modifyEntriesEvent(ModItems.CATEAR_GROUP).register(entries -> entries.add(item));
+        return Registry.register(Registries.ITEM, id(name), item);
     }
 
-    public static PlacedFeature registerPlacedFeature(String name, PlacedFeature placedFeature) {
-        return Registry.register(BuiltinRegistries.PLACED_FEATURE, id(name), placedFeature);
-    }
-
-    public static RegistryKey<PlacedFeature> registerPlacedFeatureKey(String name) {
-        return RegistryKey.of(Registry.PLACED_FEATURE_KEY, id(name));
-    }
-
-    // register custom mod block 
+    // register custom mod block
     public static Block registerBlock(String name, Block block) {
-        return Registry.register(Registry.BLOCK, id(name), block);
+        return Registry.register(Registries.BLOCK, id(name), block);
     }
+
 
     // register custom mod block with item
     public static Block registerBlockWithItem(String name, Block block) {
         registerBlockItem(name, block);
-        return Registry.register(Registry.BLOCK, id(name), block);
+        return registerBlock(name, block);
     }
 
     // register accompanied item for one block
     public static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registry.ITEM, id(name),
-                new BlockItem(block, new FabricItemSettings().group(CatsExpandedMod.CATEAR_GROUP)));
+        return registerItem(name, new BlockItem(block, new Item.Settings()));
     }
 
     public static EntityModelLayer model(String name) {
@@ -72,12 +64,12 @@ public class RegistryHelper {
     }
 
     public static Stat<Identifier> registerStatistic(Identifier id) {
-        Registry.register(Registry.CUSTOM_STAT, id.getPath(), id);
+        Registry.register(Registries.CUSTOM_STAT, id.getPath(), id);
         return Stats.CUSTOM.getOrCreateStat(id, StatFormatter.DEFAULT);
     }
 
     public static Stat<Identifier> registerStatistic(Identifier id, StatFormatter formatter) {
-        Registry.register(Registry.CUSTOM_STAT, id.getPath(), id);
+        Registry.register(Registries.CUSTOM_STAT, id.getPath(), id);
         return Stats.CUSTOM.getOrCreateStat(id, formatter);
     }
 

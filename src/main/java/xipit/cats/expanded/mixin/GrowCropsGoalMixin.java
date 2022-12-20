@@ -2,8 +2,8 @@ package xipit.cats.expanded.mixin;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.passive.BeeEntity;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.state.property.IntProperty;
-import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldEvents;
 import org.spongepowered.asm.mixin.Final;

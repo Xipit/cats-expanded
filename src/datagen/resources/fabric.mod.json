@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "catsexpanded-datagen",
+  "name": "Catsexpanded Datagen",
+  "version": "1.0.0",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "xipit.cats.expanded.datagen.ModDataGeneratorEntry"
+    ]
+  }
+}

@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.Item;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registries;
 import xipit.cats.expanded.block.ModBlocks;
 import xipit.cats.expanded.item.armor.CatearArmor;
 import xipit.cats.expanded.util.ModelHandler;
@@ -55,16 +55,16 @@ public class CatsExpandedClient implements ClientModInitializer {
     }
 
     private void registerArmorRenderer() {
-        Item[] armors = Registry.ITEM.stream()
+        Item[] armors = Registries.ITEM.stream()
                 .filter(i -> i instanceof CatearArmor
-                        && Registry.ITEM.getKey(i).get().getValue().getNamespace().equals(CatsExpandedMod.MOD_ID))
+                        && Registries.ITEM.getKey(i).get().getValue().getNamespace().equals(CatsExpandedMod.MOD_ID))
                 .toArray(Item[]::new);
 
         ArmorRenderer renderer = (matrices, vertexConsumer, stack, entity, slot, light, original) -> {
             CatearArmor armor = (CatearArmor) stack.getItem();
             var model = armor.getArmorModel();
             var texture = armor.getArmorTexture(stack, slot);
-            original.setAttributes(model);
+            model.copyStateTo(original);    // before 1.19.2: original.setAttributes(model)
             ArmorRenderer.renderPart(matrices, vertexConsumer, light, stack, model, texture);
         };
         ArmorRenderer.register(renderer, armors);

@@ -2,23 +2,24 @@ package xipit.cats.expanded.world.gen;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import xipit.cats.expanded.CatsExpandedMod;
-import xipit.cats.expanded.world.feature.ModConfiguredFeatures;
-import xipit.cats.expanded.world.feature.ModPlacedFeatures;
+import xipit.cats.expanded.util.RegistryHelper;
 
 public class ModWorldGen {
+
+    private static final Identifier CATNIP_BUSH_PATCH_ID = RegistryHelper.id("patch_catnip_bush");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> CATNIP_BUSH_PATCH_CF = getConfiguredFeature(CATNIP_BUSH_PATCH_ID);
+    public static final RegistryKey<PlacedFeature> CATNIP_BUSH_PATCH_PF = getPlacedFeature(CATNIP_BUSH_PATCH_ID);
+
     public static void register() {
         CatsExpandedMod.LOGGER.info("Registering all WorldGen related stuff for " + CatsExpandedMod.MOD_ID);
-
-        ModConfiguredFeatures.register();
-        ModPlacedFeatures.register();
 
         addPlacedFeatures();
     }
@@ -27,14 +28,16 @@ public class ModWorldGen {
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION,
-                getPlacedFeature(getPlacedFeatureIdentifier(ModPlacedFeatures.PATCH_CATNIP_BUSH)));
+                CATNIP_BUSH_PATCH_PF
+        );
     }
 
     private static RegistryKey<PlacedFeature> getPlacedFeature(Identifier placedFeatureIdentifier) {
-        return RegistryKey.of(Registry.PLACED_FEATURE_KEY, placedFeatureIdentifier);
+        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, placedFeatureIdentifier);
     }
 
-    private static Identifier getPlacedFeatureIdentifier(PlacedFeature placedFeature) {
-        return BuiltinRegistries.PLACED_FEATURE.getId(placedFeature);
+    private static RegistryKey<ConfiguredFeature<?, ?>> getConfiguredFeature(Identifier configuredFeatureIdentifier) {
+        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, configuredFeatureIdentifier);
     }
+
 }

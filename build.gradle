@@ -1,4 +1,5 @@
 plugins {
+    id 'groovy'
     id 'fabric-loom' version '1.0-SNAPSHOT'
     id 'maven-publish'
 }
@@ -9,6 +10,37 @@ targetCompatibility = JavaVersion.VERSION_17
 archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
+
+sourceSets {
+    datagen {
+        compileClasspath += main.compileClasspath
+        runtimeClasspath += main.runtimeClasspath
+        compileClasspath += main.output
+        runtimeClasspath += main.output
+    }
+
+    main {
+        resources {
+            srcDirs += [
+                    'src/main/generated'
+            ]
+        }
+    }
+}
+
+loom {
+    runs {
+        datagen {
+            server()
+            name "Data Generation"
+            vmArg "-Dfabric-api.datagen"
+            vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
+            vmArg "-Dfabric-api.datagen.modid=modid-datagen"
+            runDir "build/datagen"
+            source sourceSets.datagen
+        }
+    }
+}
 
 repositories {
     // Add repositories to retrieve artifacts from in here.
@@ -38,6 +70,7 @@ dependencies {
     // midnightlib -> for config
     modImplementation include("maven.modrinth:midnightlib:${project.midnightlib_version}")
 
+    datagenImplementation 'org.apache.groovy:groovy:4.0.6'
 }
 
 processResources {
@@ -61,9 +94,11 @@ java {
 }
 
 jar {
+    from file('src/main/generated')
     from("LICENSE") {
         rename { "${it}_${project.archivesBaseName}" }
     }
+    dependsOn 'runDatagen'
 }
 
 // configure the maven publication

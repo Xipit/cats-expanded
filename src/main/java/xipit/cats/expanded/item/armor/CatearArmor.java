@@ -8,6 +8,7 @@ import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -29,8 +30,12 @@ public class CatearArmor extends ArmorItem {
     public final EquipmentSlot slot;
     private final String dye;
 
-    public CatearArmor(EquipmentSlot slot, Settings settings) {
-        this("default", slot, settings);
+    public CatearArmor(String dye, EquipmentSlot slot) {
+        this(dye, slot, new Item.Settings());
+    }
+
+    public CatearArmor(EquipmentSlot slot) {
+        this("default", slot, new Item.Settings());
     }
 
     public CatearArmor(String dye, EquipmentSlot slot, Settings settings) {
