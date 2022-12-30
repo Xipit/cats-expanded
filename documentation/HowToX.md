@@ -21,7 +21,7 @@
 ## Create new Release
 
 1. update Version number
-   1. in src/fabric.mod.json under ```"version": "1.2.1+1.19.0"```
+   1. in src/main/fabric.mod.json under ```"version": "1.2.1+1.19.0"```
    2. in gradle.properties under ```mod_version = 1.2.1+1.19.0```
    3. in .github/worklfows/publish.yml under ```VERSION: 1.2.1+1.19.0```
       and ```  RELEASE_NAME: Cats Expanded 1.2.1 for Minecraft 1.19.0```
