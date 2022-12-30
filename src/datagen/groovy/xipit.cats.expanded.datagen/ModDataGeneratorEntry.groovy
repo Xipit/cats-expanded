@@ -1,19 +1,16 @@
 package xipit.cats.expanded.datagen
 
-import DataGeneratorEntrypoint
-import FabricDataGenerator
-import RegistryBuilder
-import RegistryKeys
-import CatsExpandedMod
-import ModWorldGenBootstrap
-import ModWorldGenProvider
+import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator
+import net.minecraft.registry.RegistryBuilder
+
 
 // see https://github.com/Ayutac/fabric-example-worldgen/blob/1.19.3/src/datagen/groovy/net/fabricmc/example/datagen/ExampleModDataGeneratorEntry.groovy
 class ModDataGeneratorEntry implements DataGeneratorEntrypoint {
     @Override
     void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         def pack = fabricDataGenerator.createPack();
-        def add = { RegistryDependentFactory factory ->
+        def add = { FabricDataGenerator.Pack.RegistryDependentFactory factory ->
             pack.addProvider(factory)
         }   // Groovy closure -> https://www.tutorialspoint.com/groovy/groovy_closures.htm
 
