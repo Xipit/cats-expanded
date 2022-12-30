@@ -5,13 +5,7 @@ import net.minecraft.block.Blocks
 import net.minecraft.registry.Registerable
 import net.minecraft.registry.RegistryEntryLookup
 import net.minecraft.registry.RegistryKeys
-import net.minecraft.registry.entry.RegistryEntry
-import net.minecraft.world.gen.feature.ConfiguredFeature
-import net.minecraft.world.gen.feature.ConfiguredFeatures
-import net.minecraft.world.gen.feature.Feature
-import net.minecraft.world.gen.feature.PlacedFeature
-import net.minecraft.world.gen.feature.PlacedFeatures
-import net.minecraft.world.gen.feature.SimpleBlockFeatureConfig
+import net.minecraft.world.gen.feature.*
 import net.minecraft.world.gen.placementmodifier.BiomePlacementModifier
 import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier
 import net.minecraft.world.gen.stateprovider.BlockStateProvider
@@ -26,7 +20,7 @@ class ModWorldGenBootstrap{
     }
 
     static void configuredFeatures(Registerable<ConfiguredFeature> registry){
-        def placedFeatureLookup = registry.getRegistryLookup(RegistryKeys.PLACED_FEATURE)
+        //def placedFeatureLookup = registry.getRegistryLookup(RegistryKeys.PLACED_FEATURE)
 
         registry.register(ModWorldGen.CATNIP_BUSH_PATCH_CF, createCatnipBushPatchConfiguredFeature())
     }

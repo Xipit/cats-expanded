@@ -27,3 +27,7 @@
       and ```  RELEASE_NAME: Cats Expanded 1.2.1 for Minecraft 1.19.0```
 2. update changelog in CHANGELOG.md
 3. Merge pull request into current default branch
+
+## Update Worldgen
+
+1. dont forget to run ./gradlew runDatagen to generate JSONs
