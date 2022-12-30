@@ -1,3 +1,1 @@
-- update to 1.19.3
-- No functional changes
-- World gen now functions through data gen, as required by 1.19.3 -> took longer than expected
+- fixes catears not rendering properly
