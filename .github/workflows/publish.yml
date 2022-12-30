@@ -38,9 +38,6 @@ jobs:
         if: ${{ runner.os != 'Windows' }}
         run: chmod +x ./gradlew
 
-      - name: Datagen
-        run: ./gradlew runDatagen
-
       - name: Build
         run: ./gradlew clean build
 
