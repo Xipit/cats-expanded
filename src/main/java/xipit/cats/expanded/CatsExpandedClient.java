@@ -64,7 +64,9 @@ public class CatsExpandedClient implements ClientModInitializer {
             CatearArmor armor = (CatearArmor) stack.getItem();
             var model = armor.getArmorModel();
             var texture = armor.getArmorTexture(stack, slot);
-            model.copyStateTo(original);    // before 1.19.2: original.setAttributes(model)
+
+            original.copyBipedStateTo(model);
+
             ArmorRenderer.renderPart(matrices, vertexConsumer, light, stack, model, texture);
         };
         ArmorRenderer.register(renderer, armors);
