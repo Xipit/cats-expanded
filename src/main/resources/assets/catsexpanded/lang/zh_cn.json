@@ -1,0 +1,18 @@
+{
+  "itemGroup.catsexpanded.general": "Cats Expanded",
+  "item.catsexpanded.catears": "猫耳",
+  "item.catsexpanded.dyed.tooltip": "已染色",
+  "item.catsexpanded.catnip": "猫薄荷",
+  "item.catsexpanded.catnip.tooltip": "能种植和喂猫",
+  "block.catsexpanded.catnip_bush": "猫薄荷丛",
+  "stat.catsexpanded.amount_of_catnip_fed_to_cats": "给猫猫喂了猫薄荷",
+  "stat.catsexpanded.amount_of_catnip_scared_creepers": "苦力怕被猫薄荷吓跑了",
+  "catsexpanded.midnightconfig.enableExtraCatSpawning": "允许猫咪在村庄外生成",
+  "catsexpanded.midnightconfig.title": "Cats Expanded 配置",
+  "modmenu.descriptionTranslation.catsexpanded": "添加猫耳和猫薄荷. 试试喂猫，豹猫和苦力怕一些猫薄荷！",
+  "modmenu.summaryTranslation.catsexpanded": "Erweitert das Gameplay rund um Katzen",
+  "block.catsexpanded.carved_cat_pumpkin": "雕刻过的猫脸南瓜",
+  "item.catsexpanded.carved_cat_pumpkin": "雕刻过的猫脸南瓜",
+  "block.catsexpanded.cat_o_lantern": "猫脸南瓜灯",
+  "item.catsexpanded.cat_o_lantern": "猫脸南瓜灯"
+}
