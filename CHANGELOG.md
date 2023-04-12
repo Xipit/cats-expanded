@@ -1,1 +1,1 @@
-- fixes catears not rendering properly
+- Add Chinese(Simplified) translation.
